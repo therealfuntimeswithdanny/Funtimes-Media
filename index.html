@@ -5,99 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://funtimesmedia.uk/mbd.png" type="image/x-icon">
     <title>Home - funtimesmedia | Made by Danny UK</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        header {
-            background: #ff4d94;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        nav ul {
-            position: sticky;
-            top: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 10px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        main {
-            padding: 20px;
-        }
-
-        article {
-            background: #fff;
-            padding: 20px;
-            margin: 20px 0; /* Remove for full post */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        article h2 {
-            color: #333;
-        }
-
-        article p {
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        article .author {
-            font-style: italic;
-            color: #888;
-            margin-bottom: 20px;
-        }
-
-        article .content img {
-            max-width: 100%;
-            height: auto;
-            margin: 20px 0;
-        }
-
-        article .content blockquote {
-            border-left: 3px solid #333;
-            padding-left: 15px;
-            margin: 20px 0;
-            color: #666;
-        }
-
-        footer {
-            background: #4d79ff;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            width: 100%;
-            bottom: 0;
-        }
-        footer a {
-            color: white;
-            }
-        img {
-            width: 720px;
-            height: 460px;
-            }
-        a {
-            color: #4d79ff;
-            }
-    </style>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
     <header>
@@ -119,6 +27,7 @@
         </nav>
     </header>
     <main>
+        <p><b>NOTICE: As of 1/22/2025 Made By Danny UK is switching from madebydanny.uk to funtimesmedia.uk.<br>madebydanny.uk will be used as Made By Danny's profinal site.</b></p>
         <p>Made With Help From Linus Tech Tips Forum, Coding2Go, Microsoft Copilot, W3Schools, Github, Reddit, MBD Developer and Cloudflare.</p>
         <p>Funtimes Media will load the 3 latest blog post, photos and videos. If the user has it set-up.</p>
         <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="funtimeswithdanny" data-color="#FF5F5F" data-emoji="☕"  data-font="Lato" data-text="Support Funtimes Media" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
@@ -134,7 +43,7 @@
         <article>
             <h2>#AD Get the worlds leading VPN- Nord VPN</h2>
             <div class="content">
-                <p></p>
+                <p><a href="https://madebydanny.uk/nordvpn">Get 76% off now!</a></p>
             </div>
         </article>
         <article>
@@ -164,6 +73,14 @@
     <footer>
         <p>&copy; 2024-2025 Made By Danny UK | Performance & Security by Cloudflare</p>
         <p>funtimesmedia.uk is part of MBDUK | Copyright 2024-2025 Made By Danny UK</p>
+        <p><script>
+            fetch('https://api.github.com/repos/therealfuntimeswithdanny/Funtimes-Media')
+                .then(response => response.json())
+                .then(data => {
+                    const lastUpdated = new Date(data.updated_at).toLocaleString();
+                    document.getElementById('repoInfo').innerText = `Last Updated at: ${lastUpdated}`;
+                });
+        </script></p>
     </footer>
 </body>
 </html>
