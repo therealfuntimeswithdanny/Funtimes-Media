@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn.madebydanny.uk/logos/mbd.png" type="image/x-icon">
+    <title>Video Page - Funtimesmedia | Made by Danny UK</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            position: sticky;
+            top: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .video-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .video-section {
+            flex: 1 1 60%;
+            max-width: 60%;
+        }
+
+        .comment-section {
+            flex: 1 1 35%;
+            max-width: 35%;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .description-section {
+            margin-top: 20px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .description-section h2, .comment-section h2 {
+            color: #333;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            bottom: 0;
+        }
+
+        img {
+            width: 720px;
+            height: 460px;
+        }
+
+        a {
+            color: #666;
+        }
+                nav .active {
+            background-color: #fff; color:#333; padding: 14px 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Videos - Funtimesmedia</h1>
+        <nav>
+            <ul>
+                <li><a href="https://funtimesmedia.uk/index.html">Home</a></li>
+                <li><a href="https://funtimesmedia.uk/archives/index.html">Archives</a></li>
+                <li><a href="https://funtimesmedia.uk/comments.html">Comments</a></li>
+                <li><a class="active"  href="index.html">Videos</a></li>
+                <li><a href="https://funtimesmedia.uk/photos.html">Photos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="video-wrapper">
+            <div class="video-section">
+                <iframe width="100%" height="480px" src="https://www.youtube.com/embed/videoid" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <section class="description-section">
+                    <h1>Host</h1>
+                    <h2>Description</h2>
+                    <p>Video description goes here...</p>
+                </section>
+            </div>
+            <div class="comment-section">
+                <h2>Comments</h2>
+                <script src="https://giscus.app/client.js"
+        data-repo="therealfuntimeswithdanny/MBD-Blog"
+        data-repo-id="R_kgDOMk0rBQ"
+        data-category="General"
+        data-category-id="DIC_kwDOMk0rBc4CmCrx"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light_high_contrast"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024-2025 Made By Danny UK | Performance & Security by Cloudflare</p>
+        <p><a>funtimesmedia.uk is part of MBDUK | Copyright 2024-2025 Made By Danny UK</p>
+    </footer>
+</body>
+</html>

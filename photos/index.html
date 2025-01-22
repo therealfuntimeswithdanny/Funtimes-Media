@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn.madebydanny.uk/logos/mbd.png" type="image/x-icon">
+    <title>Photo Gallery - Funtimesmedia | Made by Danny UK</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            position: sticky;
+            top: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .gallery img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (min-width: 600px) {
+            .gallery img {
+                flex: 1 1 calc(33.333% - 10px);
+            }
+        }
+
+        @media (max-width: 599px) {
+            .gallery img {
+                flex: 1 1 calc(50% - 10px);
+            }
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            bottom: 0;
+        }
+        img {
+            width: 720px;
+            height: 460px;
+            }
+        a {
+            color: #666;
+            }
+        iframe {
+            width: 100%;
+            height: 100vh; 
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Photo Gallery - Funtimesmedia</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="archives/index.html">Archives</a></li>
+                <li><a href="comments.html">Comments</a></li>
+                <li><a>Videos</a></li>
+                <li><a>Photos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <iframe src="https://photos.madebydanny.uk"></iframe>
+    </main>
+    <footer>
+        <p>&copy; 2024-2025 Made By Danny UK | Performance & Security by Cloudflare</p>
+        <p><a>funtimesmedia.uk is part of MBDUK | Copyright 2024-2025 Made By Danny UK</p>
+    </footer>
+</body>
+</html>
