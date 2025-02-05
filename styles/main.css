@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -51,14 +52,24 @@ nav ul li a {
 }
 
 main {
-    padding: 20px;
+    width: 70%;
+    float: left;
+    margin-left: 10px;
 }
-
+aside {
+    width: calc(30% - 10px);
+    float: left;
+}
 article {
     background: #fff;
     padding: 20px;
     margin: 20px 0; /* Remove for full post */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+aside article {
+    background: #fff;
+    padding: 20px;
+    margin: 0; /* Remove for full post */
 }
 
 article h2 {
@@ -72,8 +83,7 @@ article p {
 
 article .author {
     font-style: italic;
-    color: #888;
-    margin-bottom: 20px;
+1    margin-bottom: 20px;
 }
 
 article .content img {
@@ -88,15 +98,60 @@ article .content blockquote {
     margin: 20px 0;
     color: #666;
 }
-
 footer {
-    background: #4d79ff;
+        display: none;
+}
+tos {
+    display: none;
+}
+        @media only screen and (max-width: 600px) {
+            tos {
+    display: block;
+}
+  aside {
+      display: none;
+      }
+    p { 
+        margin-left: 10px; 
+    }
+    footer {
+    display: block;
+     background: #4d79ff;
     color: white;
     text-align: center;
     padding: 10px 0;
     width: 100%;
     bottom: 0;
+    }
+    h3{ margin-left: 10px;}
+    main {
+        width:100%;
+        margin-left: 0px;
+    }
+    bmc {
+    display: none;
+    }
+    #myBtn {
+    display: none;
+    position: fixed;
+    bottom: 50%;
+    right: 0px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px 0px 0px 4px;
+  }
+  
+  #myBtn:hover {
+    background-color: #555;
+  }
 }
+
 footer a {
     color: white;
     }
