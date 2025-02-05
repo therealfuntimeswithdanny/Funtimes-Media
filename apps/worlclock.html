@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Clock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        :root {
+            --bg-color: #f0f0f0;
+            --text-color: #000;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #333;
+            --text-color: #fff;
+        }
+
+        #clock-container {
+            text-align: center;
+            background: var(--bg-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .clock {
+            margin: 10px 0;
+            font-size: 2em; /* Increase the font size for the time */
+        }
+
+        #location-dropdown {
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid var(--text-color);
+            border-radius: 5px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s, border 0.3s;
+        }
+
+        #location-dropdown:hover, #location-dropdown:focus {
+            border-color: var(--text-color);
+        }
+
+        .controls {
+            margin-top: 20px;
+        }
+
+        .controls label {
+            display: block;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock-container">
+        <div class="clock">Current Time: <span class="time" id="current-time"></span></div>
+        <select id="location-dropdown">
+            <option value="auto" selected>Auto-detect Location</option>
+            <option value="America/New_York">New York</option>
+            <option value="Europe/London">London</option>
+            <option value="Asia/Tokyo">Tokyo</option>
+        </select>
+        <div class="controls">
+            <label>
+                <input type="checkbox" id="toggle-seconds">
+                Show Seconds
+            </label>
+            <label>
+                <input type="checkbox" id="toggle-24hour">
+                24-Hour Format
+            </label>
+            <label>
+                <input type="checkbox" id="toggle-dark-mode">
+                Dark Mode
+            </label>
+        </div>
+    </div>
+    <script>
+        let showSeconds = false;
+        let use24HourFormat = false;
+
+        function updateClock(timeZone) {
+            const now = new Date();
+            const options = {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: showSeconds ? '2-digit' : undefined,
+                hour12: !use24HourFormat,
+                timeZone: timeZone
+            };
+
+            document.getElementById('current-time').textContent = new Intl.DateTimeFormat('en-US', options).format(now);
+        }
+
+        function autoDetectTimeZone() {
+            try {
+                const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                updateClock(timeZone);
+            } catch (error) {
+                console.error('Auto-detection failed:', error);
+                updateClock('UTC'); // Fallback to UTC if auto-detection fails
+            }
+        }
+
+        document.getElementById('location-dropdown').addEventListener('change', function () {
+            const selectedTimeZone = this.value;
+            if (selectedTimeZone === 'auto') {
+                autoDetectTimeZone();
+            } else {
+                updateClock(selectedTimeZone);
+            }
+        });
+
+        document.getElementById('toggle-seconds').addEventListener('change', function () {
+            showSeconds = this.checked;
+        });
+
+        document.getElementById('toggle-24hour').addEventListener('change', function () {
+            use24HourFormat = this.checked;
+        });
+
+        document.getElementById('toggle-dark-mode').addEventListener('change', function () {
+            if (this.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+            }
+        });
+
+        // Initial auto-detect
+        autoDetectTimeZone();
+        setInterval(() => {
+            const selectedTimeZone = document.getElementById('location-dropdown').value;
+            if (selectedTimeZone === 'auto') {
+                autoDetectTimeZone();
+            } else {
+                updateClock(selectedTimeZone);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
