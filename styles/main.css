@@ -81,6 +81,12 @@ article {
     margin: 20px 0; /* Remove for full post */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+ad {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0; /* Remove for full post */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 aside article {
     background: #fff;
     padding: 20px;
@@ -163,6 +169,9 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     p { 
         margin-left: 10px; 
     }
+    ad {
+        display: none;
+}
     footer {
     display: block;
      background: #4d79ff;
