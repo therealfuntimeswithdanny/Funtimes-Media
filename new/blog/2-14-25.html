@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Made by Danny</title>
+    <style>
+        /* Reset default styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation bar */
+        .navbar {
+            background-color: #fff;
+            padding: 15px 20px;
+            border-bottom: 1px solid #e5e5e5;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-list li {
+            margin: 0 20px;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-list a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #007BFF; /* Accent color */
+            transition: width .3s;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+        }
+
+        .nav-list a:hover::after {
+            width: 100%;
+        }
+
+        /* Sections styling */
+        .section {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: 60px auto;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-align: center;
+            color: #007BFF;
+        }
+        
+        home {
+            text-align: center;
+              }
+        
+        .section p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        /* Rounded corners for images or videos */
+        img, iframe {
+            border-radius: 15px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Specific styling for articles in the blog section */
+        .blog-post {
+            margin-bottom: 40px;
+        }
+
+        .blog-post h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .blog-post p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        .blog-post a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .blog-post a:hover {
+            text-decoration: underline;
+        }
+
+        /* More section styling */
+        .more-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .more-list li {
+            margin-bottom: 10px;
+        }
+
+        .more-list a {
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        .more-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nav-list {
+                flex-direction: column;
+            }
+
+            .nav-list li {
+                margin: 10px 0;
+            }
+
+            .section {
+                margin: 40px 10px;
+                padding: 40px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#more">More</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <h2>Stop using Threads or Twitter use Bluesky instead</h2>
+        <img src="https://cdn.funtimesmedia.uk/media/blogs/blue-sky-logo-with-2-blue.jpg" alt="Creative banner image">
+    </section>
+
+    <!-- Blogs Section -->
+    <section id="blogs" class="section">
+        <h2>Latest Blogs</h2>
+        <div class="blog-post">
+            <h3>Embracing Minimalism in Web Design</h3>
+            <p>Discover how less can truly be more. I delve into the principles of minimalistic design and how it enhances user experience.</p>
+            <a href="blog/2-14-25.html">Read more...</a>
+        </div>
+        <div class="blog-post">
+            <h3>The Journey of Learning JavaScript</h3>
+            <p>From callbacks to async/await, I share my adventures and challenges in mastering JavaScript.</p>
+            <a href="#">Read more...</a>
+        </div>
+    </section>
+
+    <!-- More Section -->
+    <section id="more" class="section">
+        <h2>Explore More</h2>
+        <ul class="more-list">
+            <li><a href="#">Projects Gallery</a></li>
+            <li><a href="#">Photography Portfolio</a></li>
+            <li><a href="#">Get in Touch</a></li>
+        </ul>
+    </section>
+
+        <!-- Copyright Section -->
+    <section id="more" class="section">
+        <h2>Made By Danny UK</h2>
+        <home>
+            <p>&copy</p>
+        </home>
+    </section>
+
+    <!-- Smooth Scrolling Script -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
