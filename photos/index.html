@@ -2,395 +2,253 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Danny's Photos - Made by Danny UK</title>
+     <link rel="icon" href="https://cdn.madebydanny.uk/mbd.png" type="image/x-icon">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore the photography portfolio of Danny, showcasing a collection of captivating images captured through the lens of a 12-year-old creative mind.">
+    <meta name="keywords" content="Danny, photography, portfolio, photos, gallery, young photographer, UK, Made By Danny UK, Made By Danny, MBD, MBD Photos, Funtimeswithdanny Photos, Made By Danny Photos">
+    <meta name="author" content="Danny">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://cdn.madebydanny.uk/mbd.png" type="image/x-icon">
-    <title>Photos - funtimesmedia | Made by Danny UK</title>
-</head>
-    <style>
-        
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-}
-#myBtn {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99;
-    font-size: 18px;
-    border: none;
-    outline: none;
-    background-color: red;
-    color: white;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 4px;
-  }
-  
-  #myBtn:hover {
-    background-color: #555;
-  }
-header {
-    background: #ff4d94;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
+    
+    <!-- Open Graph Meta Tags (for social media sharing) -->
+    <meta property="og:title" content="Photography Portfolio - Made by Danny">
+    <meta property="og:description" content="A gallery of photographs captured by Danny, showcasing his creative journey as a young photographer.">
+    <meta property="og:image" content="https://madebydanny.uk/photos/og-image.jpg">
+    <meta property="og:url" content="https://madebydanny.uk/photos.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Photography Portfolio - Made by Danny">
+    <meta name="twitter:description" content="A gallery of photographs captured by Danny, showcasing his creative journey as a young photographer.">
+    <meta name="twitter:image" content="https://madebydanny.uk/photos/twitter-card.jpg">
 
-header h1 {
-    margin: 0;
-}
-
-nav ul {
-    position: sticky;
-    top: 0;
-}
-nav ul li {
-    display: inline;
-    margin-right: 10px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-main {
-    width: 70%;
-    float: left;
-    margin-left: 10px;
-}
-aside {
-    width: calc(30% - 10px);
-    float: left;
-}
-article {
-    background: #fff;
-    padding: 20px;
-    margin: 20px 0; /* Remove for full post */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-aside article {
-    background: #fff;
-    padding: 20px;
-    margin: 0; /* Remove for full post */
-}
-
-article h2 {
-    color: #333;
-}
-
-article p {
-    line-height: 1.8;
-    margin-bottom: 20px;
-}
-
-article .author {
-    font-style: italic;
-1    margin-bottom: 20px;
-}
-
-article .content blockquote {
-    border-left: 3px solid #333;
-    padding-left: 15px;
-    margin: 20px 0;
-    color: #666;
-}
-footer {
-        display: none;
-}
-tos {
-    display: none;
-}
-
-        
-        @media only screen and (max-width: 600px) {
-            tos {
-    display: block;
-}
-  aside {
-      display: none;
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://madebydanny.uk/photos.html">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageGallery",
+      "name": "Photography Portfolio of Danny",
+      "url": "https://madebydanny.uk/photos.html",
+      "description": "A collection of photographs captured by Danny, showcasing various themes and subjects.",
+      "creator": {
+        "@type": "Person",
+        "name": "Danny",
+        "url": "https://madebydanny.uk"
       }
-    p { 
-        margin-left: 10px; 
     }
-    footer {
-    display: block;
-     background: #4d79ff;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    width: 100%;
-    bottom: 0;
-    }
-    h3{ margin-left: 10px;}
-    main {
-        width:100%;
-        margin-left: 0px;
-    }
-    bmc {
-    display: none;
-    }
-    #myBtn {
-    display: none;
-    position: fixed;
-    bottom: 50%;
-    right: 0px;
-    z-index: 99;
-    font-size: 18px;
-    border: none;
-    outline: none;
-    background-color: rgba(0, 0, 0, 0.1);
-    color: white;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 4px 0px 0px 4px;
-  }
-  
-  #myBtn:hover {
-    background-color: #555;
-  }
-}
-
-footer a {
-    color: white;
-    }
-img {
-    width: 100%;
-    }
-    column {
-        width: 25%;
-        float: left;
-        }
-a {
-    color: #4d79ff;
-    }
-.active {
-    background-color: #4d79ff;
-    padding: 14px 16px;
-}
-</style>
-  <style>
-    form {
-      background: #fff;
-      padding: 20px;
-    }
-    form p {
-        font-size: 10px;
-    }
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-    }
-    input[type="text"], input[type="email"], textarea, select {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      background-color: #007bff;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-    
-</style>
-<body>
-    <header>
-        <h1>Photos - Funtimesmedia UK</h1>
-        <nav>
-            <ul>
-                <li><a href="https://madebydanny.uk/index.html">Home</a></li>
-                <li><a href="https://madebydanny.uk/about.html">About</a></li>
-                <li><a href="https://madebydanny.uk/archives/index.html">Archives</a></li>
-                <li><a href="https://madebydanny.uk/comments.html">Comments</a></li>
-                <li><a href="https://madebydanny.uk/videos/index.html">Videos</a></li>
-                <li classs="active" ><a href="https://madebydanny.uk/photos/index.html">Photos</a></li>
-                <li><a href="https://madebydanny.uk/developer/index.html"> Developer</a></li>
-                <li><a href="https://madebydanny.uk/pptx/index.html">PPTX</a></li>
-                <li><a href="https://madebydanny.uk/games/index.html">Games</a></li>
-                <li><a>Apps</a></li>
-            </ul>
-    </nav>
-   </header>
-    <main>
-             <p><b>NOTICE: As of 1/22/2025 Made By Danny UK is switching from madebydanny.uk to funtimesmedia.uk.<br>madebydanny.uk will be used for shortend links and for MBD Online</b></p>
-             <p>Made With Help From Linus Tech Tips Forum, Coding2Go, Microsoft Copilot, W3Schools, Github, Reddit, MBD Developer and Cloudflare.</p>
-        <bmc>
-                         <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="funtimeswithdanny" data-color="#FF5F5F" data-emoji="☕"  data-font="Lato" data-text="Support Funtimes Media" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
-        </bmc>
-        <article>
-            <column>
-                <a href="DSC_3793.html">
-                  <img src="https://cdn.funtimesmedia.uk/media/Photos/DSC_3793.JPG">
-                </a>
-            </column>
-            <column>
-                <a href="DSC_3827.html">
-                    <img src="https://cdn.funtimesmedia.uk/media/Photos/DSC_3827.JPG">
-                </a>
-            </column>
-            <column>
-                <img src="https://cdn.funtimesmedia.uk/media/Photos/DSC_3765.JPG">
-            </column>
-             <column>
-            </column>
-        </article>
-    <footer>
-        <h1>Funtimes Media UK</h1>
-     <p>&copy; 2024-2025 Made By Danny UK | Performance & Security by Cloudflare</p>
-    <p>funtimesmedia.uk is part of MBDUK | Copyright 2024-2025 Made By Danny UK</p>
-    </footer>
-    </main>
-    <aside>
-    <article>
-            <iframe src="https://spring-salad-8d78.madebydanny.uk/" style="width: 100%; height: 300px; border: none;"></iframe>
-    </article>
-    <article>
-        <iframe src="https://bold-rain-605b.madebydannyuk.workers.dev/" style=" width: 100%; height: 300px; border: none"></iframe>
-    </article>
-    <article>
-        <h2>About</h2>
-        <p class="author">By Daniel Morrisey</p>
-        <div class="content">
-            <p>MBD or Made By Danny is a small site Made By Danny that started on May 10 2024 by a 12 year-old kid named Danny. I (Danny) loved tech. I wanted to learn to code websites (HTML) . I found a short show on a Microsoft site then expanded to W3Schools and youtube where Techno Time showed me how to use Cloudflare. The story has just begun.
-</p>
-            <h3>Why UK</h3>
-            <p>You might be asking why Made By Danny UK, that's because I am British and because Cloudflare .uk domains are cheaper. Mainly because madebydanny.com was taken. And I like the sound of "Made By Danny UK" it stands out.
-</p>
-            <h3>MBD + Cloudflare</h3>
-            <p>In my blog I mention Cloudflare alot but what is it <br> “Cloudflare started as a simple application to find the source of email spam. From there it grew into a service that protects websites from all manner of attacks, while simultaneously optimizing performance.” -https://www.cloudflare.com/about-overview/<br>
-I Love it and it’s free. That's why our websites are fast why simple things like being able to check the weather from our homepage is possible why madebydanny.uk is so cheap why we can build a better internet why we can say “Performance and Security By Cloudflare” why we can handle attacks everyday and not worry about it, why we can keep MBD Free because Cloudflare is Free. Here at MBD we Love Cloudflare.</p>
-
-        </div>
-    </article>
-    <article>
-        <h2>Want to become a Sponser/Partner</h2>
-        <p>Pay a small price to gain users</p>
-    <form action="https://sponser-morning-rain-0857.madebydannyuk.workers.dev/" method="post">
-    <label for="company_name">Company Name:</label>
-    <input type="text" id="company_name" name="company_name" required><br><br>
-
-    <label for="company_website">Company Website:</label>
-    <input type="text" id="company_website" name="company_website" required><br><br>
-
-    <label for="offering">What You Are Offering:</label>
-    <select id="offering" name="offering" required>
-      <option value="discount">Discount</option>
-      <option value="affiliate_commission">Affiliate Commission</option>
-      <option value="product_sample">Product Sample</option>
-    </select><br><br>
-    <label for="where">Where do you want to advertise:</label>
-    <select id="where" name="where" required>
-      <option value="3-blog-post">3 Blog Post ($3 USD)</option>
-      <option value="5-blog-post">5 Blog Post (5$ USD)</option>
-      <option value="5-website-ads">5 Website Ads (7$ USD)</option>
-       <option value="10-website-ads">10 Website Ads (15$ USD)</option>
-       <option value="1-video-ad">1 Video Ad (10$ USD)</option>
-    </select><br><br>
-    <label for="email">Contact Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
-    
-    <label for="name">Contact Name:</label>
-    <input type="text" id="name" name="name" required><br><br>
-    
-        <label for="name">(optional) Trustpilot Link:</label>
-    <input type="text" id="name" name="name" required><br><br>
-    
-    <button type="submit">Submit</button>
-    <p>By clicking “Submit” you agree to <a href=”https://funtimesmedia.uk/tos”>MBD TOS and Privacy Policy</a> and That you know <b>Your Data is Stored Securely on Cloudflare</b></p>
-    <p>Powerd By <a>MBD Online</a><br>
-    <p>&copy; 2024-2025 Made By Danny UK | Performance & Security by Cloudflare</p>
-    
-  </form>
-    </article>
-    <article>
-            <h2>#AD Get the worlds leading VPN- Nord VPN</h2>
-            <div class="content">
-                <p><a href="https://madebydanny.uk/nordvpn">Get 76% off now!</a></p>
-            </div>
-        </article>
-            <article>
-        <h2>MBD Apps are commign soon!</h2>
-        <h3>We need your help!<br>Have a app made you wish to puplish to MBD Apps Libary?</h3>
-    <form action="https://sponser-morning-rain-0857.madebydannyuk.workers.dev/" method="post">
-    <label for="company_name">App Name:</label>
-    <input type="text" id="app_name" name="app_name" required><br><br>
-
-    <label for="company_website">Developer Name:</label>
-    <input type="text" id="developer_name" name="developer_name" required><br><br>
-
-    <label for="where">Where do you need your app Deployed:</label>
-    <select id="where" name="where" required>
-      <option value="cloudflare_workers">Cloduflare Workers</option>
-      <option value="cloudfalre_pages">CLoduflare Pages</option>
-    </select><br><br>
-    <label for="email">Contact Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
-    
-    <label for="name">Contact Name:</label>
-    <input type="text" id="name" name="name" required><br><br>
-    
-        <label for="github">(myusername/myrepo) Github Link:</label>
-    <input type="text" id="github" name="github" required><br><br>
-    
-    <button type="submit">Submit</button>
-    <p>By clicking “Submit” you agree to <a href=”https://funtimesmedia.uk/tos”>MBD TOS and Privacy Policy</a> and That you know <b>Your Data is Stored Securely on Cloudflare</b></p>
-    <p>Powerd By <a>MBD Online</a><br>
-    <p>&copy; 2024-2025 Made By Danny UK | Performance & Security by Cloudflare</p>
-    
-  </form>
-    </article>
-        <article>
-            <h3 id="tos">Privacy Policy</h3>
-            <h2>Privacy Policy Jan 22 2025</h2>
-            <p class="author">By Made By Danny UK</p>
-            <div class="content">
-                <p>This website uses cookies to ensure you get the best experience.
-                    <br>In order for madebydanny.uk to work properly we need you to accept our Terms of Service (TOS) and our Privacy Policy
-                    <br>MBD collects data for analytics via Cloudflare, Data saved is the following: <br>Device Manufacturer, Operating System (OS), Screen size, Country Accessed from, Browser and https version. And that you agree to Font Awesome TOS and Statcounter. <br>Because those sites are need to function Properly
-                    <br>You must also agree that all content and sites with the<br>
-                     <a href=”https://madebydanny.uk”>madebydanny.uk</a> and <br><a href=”https://madebydanny.co.uk”>madebydanny.co.uk</a> domains are Copyright 2024-2025 Made By Danny UK
-                    <br>(US, Canada, Mexico, France, United Kingdom and Australia).</p>
-                    <p><b>YOU MAY NOT DECLINE OUR TOS AND OUR COOKIE CONSENT FORM AS THIS IS NEEDED FOR THE SITE TO FUNCTION</b></p>
-        </article>
-        
-        <article>
-         <h1>Funtimes Media UK</h1>
-        <p>&copy; 2024-2025 Made By Danny UK | Performance & Security by Cloudflare</p>
-        <p>funtimesmedia.uk is part of MBDUK | Copyright 2024-2025 Made By Danny UK</p>
-        </article>
-    </aside>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-    <script src="https://funtimesmedia.uk/script/script.js"></script>
-    <!-- Default Statcounter code for MBD http://madebydanny.uk
--->
-<script type="text/javascript">
-    var sc_project=13076918; 
-    var sc_invisible=1; 
-    var sc_security="cf828171"; 
     </script>
-    <script type="text/javascript"
-    src="https://www.statcounter.com/counter/counter.js"
-    async></script>
-    <noscript><div class="statcounter"><a title="Web Analytics
-    Made Easy - Statcounter" href="https://statcounter.com/"
-    target="_blank"><img class="statcounter"
-    src="https://c.statcounter.com/13076918/0/cf828171/1/"
-    alt="Web Analytics Made Easy - Statcounter"
-    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-    <!-- End of Statcounter Code -->
+
+    <!-- Inline CSS Styles -->
+    <style>
+        /* Reset default styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Dark mode styles */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #121212;
+                color: #e0e0e0;
+            }
+            .navbar {
+                background-color: #1e1e1e;
+                border-bottom: 1px solid #333;
+            }
+            .nav-list a {
+                color: #e0e0e0;
+            }
+            .nav-list a::after {
+                background: #bb86fc;
+            }
+            .section {
+                background-color: #1e1e1e;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            }
+            .section h2 {
+                color: #bb86fc;
+            }
+            .gallery img:hover {
+                box-shadow: 0 15px 25px rgba(255, 255, 255, 0.2);
+            }
+        }
+
+        /* Navigation bar */
+        .navbar {
+            background-color: #fff;
+            padding: 15px 20px;
+            border-bottom: 1px solid #e5e5e5;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-list li {
+            margin: 10px 15px;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-list a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #007BFF;
+            transition: width 0.3s;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+        }
+
+        .nav-list a:hover::after {
+            width: 100%;
+        }
+
+        /* Section styling */
+        .section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 60px auto;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .section h2 {
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-align: center;
+            color: #007BFF;
+        }
+
+        /* Gallery styling */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 20px;
+            align-items: stretch;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            display: block;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .section {
+                margin: 40px 10px;
+                padding: 40px 15px;
+            }
+
+            .section h2 {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                margin: 30px 5px;
+                padding: 30px 10px;
+            }
+
+            .section h2 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/blog/index.html">Blogs</a></li>
+            <li><a href="/videos.html">Videos</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/more.html">More</a></li>
+        </ul>
+    </nav>
+
+    <!-- Photo Gallery Section -->
+    <section class="section">
+        <h2>Danny's Photos</h2>
+        <div class="gallery">
+            <!-- Replace the src attributes with the paths to your actual images -->
+            <a href=" photos/DSC_3793.html">
+              <img src="https://cdn.funtimesmedia.uk/media/Photos/DSC_3793.JPG" alt="https://cdn.funtimesmedia.uk/media/Photos/DSC_3793.JPG">
+            </a>
+            <img src="https://cdn.funtimesmedia.uk/media/Photos/DSC_3827.JPG" alt="https://cdn.funtimesmedia.uk/media/Photos/DSC_3827.JPG">
+            <img src="https://cdn.funtimesmedia.uk/media/Photos/DSC_3765.JPG" alt="https://cdn.funtimesmedia.uk/media/Photos/DSC_3765.JPG">
+            <img src="DSC_0164.jpeg" alt="https://cdn.funtimesmedia.uk/media/Photos/DSC_0164.jpeg">
+            <img src="DSC_2024.jpeg" alt="https://cdn.funtimesmedia.uk/media/Photos/DSC_2024.jpeg">
+            <img src="DSC_2017.jpeg" alt="https://cdn.funtimesmedia.uk/media/Photos/DSC_2017.jpeg">
+             <img src="DSC_4756.jpeg" alt="https://cdn.funtimesmedia.uk/media/Photos/DSC_4756.jpeg">
+             <img src="DSC_0140.JPG" alt="https://cdn.funtimesmedia.uk/media/Photos/DSC_0140.JPG">
+            <!-- Add more images as needed -->
+        </div>
+    </section>
+        <section id="copyright" class="section">
+        <h2>Made By Danny UK</h2>
+        <home>
+            <p>&copy; 2025-2028 Made By Danny UK All rights reserved | Performance & Security by Cloudflare</p>
+        </home>
+        <small>
+            <p>Made With Help From Linus Tech Tips Forum, Coding2Go, Microsoft Copilot, W3Schools, Github, Reddit, MBD Developer and Cloudflare.</p>
+        </small>
+    </section>
+
+    <!-- Smooth Scrolling Script -->
+    <script>
+        // Smooth scrolling for internal links (if needed)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>

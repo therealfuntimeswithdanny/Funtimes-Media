@@ -1,0 +1,286 @@
+        /* Reset default styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation bar */
+        .navbar {
+            background-color: #fff;
+            padding: 15px 20px;
+            border-bottom: 1px solid #e5e5e5;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-list li {
+            margin: 0 20px;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        small {
+            
+            font-size: 5px;
+            text-align: center;
+            
+            }
+        
+        .nav-list a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #007BFF; /* Accent color */
+            transition: width .3s;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+        }
+
+        .nav-list a:hover::after {
+            width: 100%;
+        }
+
+        /* Sections styling */
+        .section {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: 60px auto;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-align: center;
+            color: #007BFF;
+        }
+        
+        home {
+            text-align: center;
+              }
+        
+        .section p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        /* Rounded corners for images or videos */
+        img, iframe {
+            border-radius: 15px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Specific styling for articles in the blog section */
+        .blog-post {
+            margin-bottom: 40px;
+        }
+
+        .blog-post h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .blog-post p {
+            font-size: 1em;
+            color: #555;
+        }
+
+
+        /* Gallery styling */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 20px;
+            align-items: stretch;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            display: block;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .blog-post a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .blog-post a:hover {
+            text-decoration: underline;
+        }
+
+        /* More section styling */
+        .more-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .more-list li {
+            margin-bottom: 10px;
+        }
+
+        .more-list a {
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        .more-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nav-list {
+                flex-direction: column;
+            }
+
+            .nav-list li {
+                margin: 10px 0;
+            }
+
+            .section {
+                margin: 40px 10px;
+                padding: 40px 15px;
+            }
+        }
+   .section h2 {
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-align: center;
+            color: #007BFF;
+        }
+
+        .section p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        home {
+            text-align: center;
+            }
+        
+        /* Rounded corners for images or videos */
+        img, iframe {
+            border-radius: 15px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Specific styling for articles in the blog section */
+        .blog-post {
+            margin-bottom: 40px;
+        }
+
+        .blog-post h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .blog-post p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        .blog-post a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .blog-post a:hover {
+            text-decoration: underline;
+        }
+
+        /* More section styling */
+        .more-list {
+            list-style: none;
+            padding-left: 0;
+            text-align: center;
+        }
+
+        .more-list li {
+            margin-bottom: 10px;
+        }
+
+        .more-list a {
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        .more-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nav-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-list li {
+                margin: 10px 0;
+            }
+
+            .section {
+                margin: 40px 10px;
+                padding: 40px 15px;
+            }
+
+            .section h2 {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                margin: 30px 5px;
+                padding: 30px 10px;
+            }
+
+            .section h2 {
+                font-size: 1.8em;
+            }
+
+            .nav-list li {
+                margin: 8px 0;
+            }
+
+            .nav-list a {
+                font-size: 1em;
+            }
+        }
