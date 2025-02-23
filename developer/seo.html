@@ -5,7 +5,6 @@
     <title>SEO-MBD Developer | Made By Danny UK</title>
     <link rel="icon" href="https://cdn.madebydanny.uk/mbd.png" type="image/x-icon">
     <link rel="stylesheet" href="/dev.css">
-    <base href="https://beta.madebydanny.uk">
     <!-- SEO Meta Tags -->
     <meta name="description" content="Learn how to use SEO to get your website found on Google and Bing. This page was made with 'some' help from AI.">
     <meta name="keywords" content="SEO, Search Engine Optimization, Google, Bing, Web Development, AI Assistance">
@@ -22,10 +21,11 @@
 <body>
     <div class="container">
         <!-- Left-side Navbar -->
+        
         <nav class="navbar">
             <h2>MBD Developer<br>#: SEO</h2>
             <ul class="nav-list">
-                <li><a href="index.html">Home</a></li>
+                <a href="index.html">Home</a>
                 <li><a href="#SEO">What is SEO</a></li>
                 <li><a href="#basic">Basic SEO</a></li>
             </ul>
@@ -53,20 +53,5 @@
             </section>
         </div>
     </div>
-
-    <!-- Smooth Scrolling Script -->
-    <script>
-        document.querySelectorAll('.nav-list a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
