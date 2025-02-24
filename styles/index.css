@@ -226,6 +226,10 @@
             text-decoration: underline;
         }
 
+        iframe {
+            width: 100%;
+            border: none;
+        }
         /* Responsive design */
         @media (max-width: 768px) {
             .nav-list {
