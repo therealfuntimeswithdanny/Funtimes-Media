@@ -17,7 +17,7 @@
             width: 100%;
             border: none;
         }
-        
+
         /* Navigation bar */
         .navbar {
             background-color: #fff;
@@ -47,10 +47,8 @@
         }
 
         small {
-            
-            font-size: 5px;
+            font-size: 1.1em;
             text-align: center;
-            
             }
         
         .nav-list a::after {
