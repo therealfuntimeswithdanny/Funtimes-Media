@@ -63,6 +63,25 @@
             bottom: -5px;
         }
 
+        /* Main content takes up available space and leaves room for sidebar */
+        .main-content {
+          flex: 1;
+          margin-right: 33%; /* Adjust according to the sidebar width + desired gap */
+        }
+        /* Sidebar styling */
+        .sidebar {
+          width: 30%;
+          background-color: #fff;
+          padding: 20px;
+          position: fixed;
+          right: 0;
+          top: 0;
+          height: 100vh; /* Full viewport height */
+          overflow-y: auto;
+          box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+
         .nav-list a:hover::after {
             width: 100%;
         }
