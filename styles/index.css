@@ -196,6 +196,7 @@
             text-align: center;
             }
         
+
         /* Rounded corners for images or videos */
         img, iframe {
             border-radius: 15px;
@@ -268,6 +269,10 @@
 
             .section h2 {
                 font-size: 2em;
+            }
+
+            .sidebar {
+                display: none;
             }
         }
 
