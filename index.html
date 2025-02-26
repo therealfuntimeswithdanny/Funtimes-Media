@@ -195,6 +195,23 @@
               </form>
     </aside>
   </div>
+    <script>
+  // When the page loads, send analytics data to your Worker.
+  window.addEventListener('load', async () => {
+    const payload = {
+      loadTime: performance.now(),
+      timestamp: new Date().toISOString()
+    };
+    await fetch('https://api.madebydanny.uk/analytics', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    });
+  });
+</script>
+
   <!-- Default Statcounter code for MBD -->
   <script type="text/javascript">
     var sc_project = 13076918; 
