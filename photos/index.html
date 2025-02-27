@@ -1,254 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Danny's Photos - Made by Danny UK</title>
-     <link rel="icon" href="https://cdn.madebydanny.uk/mbd.png" type="image/x-icon">
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Explore the photography portfolio of Danny, showcasing a collection of captivating images captured through the lens of a 12-year-old creative mind.">
-    <meta name="keywords" content="Danny, photography, portfolio, photos, gallery, young photographer, UK, Made By Danny UK, Made By Danny, MBD, MBD Photos, Funtimeswithdanny Photos, Made By Danny Photos">
-    <meta name="author" content="Danny">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Open Graph Meta Tags (for social media sharing) -->
-    <meta property="og:title" content="Photography Portfolio - Made by Danny">
-    <meta property="og:description" content="A gallery of photographs captured by Danny, showcasing his creative journey as a young photographer.">
-    <meta property="og:image" content="https://madebydanny.uk/photos/og-image.jpg">
-    <meta property="og:url" content="https://madebydanny.uk/photos.html">
-    <meta property="og:type" content="website">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Photography Portfolio - Made by Danny">
-    <meta name="twitter:description" content="A gallery of photographs captured by Danny, showcasing his creative journey as a young photographer.">
-    <meta name="twitter:image" content="https://madebydanny.uk/photos/twitter-card.jpg">
-
-    <!-- Canonical Link -->
-    <link rel="canonical" href="https://madebydanny.uk/photos.html">
-    
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ImageGallery",
-      "name": "Photography Portfolio of Danny",
-      "url": "https://madebydanny.uk/photos.html",
-      "description": "A collection of photographs captured by Danny, showcasing various themes and subjects.",
-      "creator": {
-        "@type": "Person",
-        "name": "Danny",
-        "url": "https://madebydanny.uk"
-      }
+  <meta charset="UTF-8">
+  <title>Made By Danny UK - Photos</title>
+  <script src="https://kit.fontawesome.com/0ca27f8db1.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=960">
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    </script>
-
-    <!-- Inline CSS Styles -->
-    <style>
-        /* Reset default styling */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body styling */
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        /* Dark mode styles */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #121212;
-                color: #e0e0e0;
-            }
-            .navbar {
-                background-color: #1e1e1e;
-                border-bottom: 1px solid #333;
-            }
-            .nav-list a {
-                color: #e0e0e0;
-            }
-            .nav-list a::after {
-                background: #bb86fc;
-            }
-            .section {
-                background-color: #1e1e1e;
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-            }
-            .section h2 {
-                color: #bb86fc;
-            }
-            .gallery img:hover {
-                box-shadow: 0 15px 25px rgba(255, 255, 255, 0.2);
-            }
-        }
-
-        /* Navigation bar */
-        .navbar {
-            background-color: #fff;
-            padding: 15px 20px;
-            border-bottom: 1px solid #e5e5e5;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-list {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .nav-list li {
-            margin: 10px 15px;
-        }
-
-        .nav-list a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            position: relative;
-            padding: 5px 0;
-        }
-
-        .nav-list a::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background: #007BFF;
-            transition: width 0.3s;
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-        }
-
-        .nav-list a:hover::after {
-            width: 100%;
-        }
-
-        /* Section styling */
-        .section {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: 60px auto;
-            background-color: #fff;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s, box-shadow 0.3s;
-        }
-
-        .section h2 {
-            margin-bottom: 30px;
-            font-size: 2.5em;
-            text-align: center;
-            color: #007BFF;
-        }
-
-        /* Gallery styling */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            grid-gap: 20px;
-            align-items: stretch;
-        }
-
-        .gallery img {
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-            display: block;
-            object-fit: cover;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 25px rgba(0,0,0,0.2);
-        }
-
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .section {
-                margin: 40px 10px;
-                padding: 40px 15px;
-            }
-
-            .section h2 {
-                font-size: 2em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .section {
-                margin: 30px 5px;
-                padding: 30px 10px;
-            }
-
-            .section h2 {
-                font-size: 1.8em;
-            }
-        }
-    </style>
+    
+    /* Base Color Palette */
+    :root {
+      --primary: #2C3E50;    /* Dark slate blue for text headings */
+      --secondary: #ecf0f1;  /* Light background */
+      --accent: #e74c3c;     /* Vibrant red (accent) */
+      --header-bg: #34495E;  /* Muted blue for header */
+      --widget-bg: #f7f7f7;
+    }
+    
+    /* Dark Mode Color Palette */
+    [data-theme="dark"] {
+      --primary: #ddd;
+      --secondary: #333;
+      --accent: #ffa500;
+      --header-bg: #222;
+      --widget-bg: #555;
+    }
+    
+    /* Body & Overall Container */
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--secondary);
+      color: #333;
+      line-height: 1.6;
+    }
+    .container {
+      width: 1080px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    
+    /* Header */
+    header {
+      background: var(--header-bg);
+      color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-size: 2em;
+    }
+    nav ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+    nav ul li {
+      display: inline;
+      margin-right: 15px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
+    
+    /* Photo Gallery Section */
+    .photo-gallery {
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .photo-gallery h2 {
+      width: 100%;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 1.8em;
+      color: var(--primary);
+    }
+    .photo-gallery img {
+      width: 31%;
+      margin: 1%;
+      float: left;
+      border: 3px solid var(--accent);
+    }
+    
+    /* Clearfix */
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* Footer */
+    footer {
+      clear: both;
+      border-top: 2px solid #ddd;
+      padding-top: 20px;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #777;
+    }
+    
+    /* Back to Top Button */
+    #backToTop {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+    }
+    #backToTop:hover {
+      opacity: 0.8;
+    }
+    
+    /* Dark Mode Toggle Button */
+    #darkModeToggle {
+      position: fixed;
+      top: 20px;
+      right: 40px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    #darkModeToggle:hover {
+      opacity: 0.8;
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <ul class="nav-list">
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/blog/index.html">Blogs</a></li>
-            <li><a href="/videos.html">Videos</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/more.html">More</a></li>
+  <div class="container">
+  
+    <!-- Header Section -->
+    <header>
+      <h1>Made By Danny UK</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="photos.html">Photos</a></li>
+          <li><a href="archives.html">Archives</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
-    </nav>
-
+      </nav>
+    </header>
+    
     <!-- Photo Gallery Section -->
-    <section class="section">
-        <h2>Danny's Photos</h2>
-        <div class="gallery">
-            <!-- Replace the src attributes with the paths to your actual images -->
-            <a href=" photos/DSC_3793.html">
-              <img src="https://cdn.funtimesmedia.uk/media/Photos/DSC_3793.JPG" alt="https://cdn.funtimesmedia.uk/media/Photos/DSC_3793.JPG">
-            </a>
-            <img src="https://cdn.funtimesmedia.uk/media/Photos/DSC_3827.JPG" alt="https://cdn.funtimesmedia.uk/media/Photos/DSC_3827.JPG">
-            <img src="https://cdn.funtimesmedia.uk/media/Photos/DSC_3765.JPG" alt="https://cdn.funtimesmedia.uk/media/Photos/DSC_3765.JPG">
-            <img src="DSC_0164.jpeg" alt="https://cdn.funtimesmedia.uk/media/Photos/DSC_0164.jpeg">
-            <img src="DSC_2024.jpeg" alt="https://cdn.funtimesmedia.uk/media/Photos/DSC_2024.jpeg">
-            <img src="DSC_2017.jpeg" alt="https://cdn.funtimesmedia.uk/media/Photos/DSC_2017.jpeg">
-             <img src="DSC_4756.jpeg" alt="https://cdn.funtimesmedia.uk/media/Photos/DSC_4756.jpeg">
-             <img src="DSC_0140.JPG" alt="https://cdn.funtimesmedia.uk/media/Photos/DSC_0140.JPG">
-            <!-- Add more images as needed -->
-        </div>
+    <section class="photo-gallery clearfix">
+      <h2>My Photo Gallery</h2>
+      <img src="https://placehold.co/350x250?text=Photo+1" alt="Photo 1">
+      <img src="https://placehold.co/350x250?text=Photo+2" alt="Photo 2">
+      <img src="https://placehold.co/350x250?text=Photo+3" alt="Photo 3">
+      <img src="https://placehold.co/350x250?text=Photo+4" alt="Photo 4">
+      <img src="https://placehold.co/350x250?text=Photo+5" alt="Photo 5">
+      <img src="https://placehold.co/350x250?text=Photo+6" alt="Photo 6">
+      <!-- Add more images as desired -->
     </section>
-        <section id="copyright" class="section">
-        <h2>Made By Danny UK</h2>
-        <home>
-            <p>&copy; 2025-2028 Made By Danny UK All rights reserved | Performance & Security by Cloudflare</p>
-        </home>
-        <small>
-            <p>Made With Help From Linus Tech Tips Forum, Coding2Go, Microsoft Copilot, W3Schools, Github, Reddit, MBD Developer and Cloudflare.</p>
-        </small>
-    </section>
-
-    <!-- Smooth Scrolling Script -->
-    <script>
-        // Smooth scrolling for internal links (if needed)
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    
+    <!-- Footer Section -->
+    <footer>
+      <p>&copy; 2024 Made By Danny UK. All Rights Reserved.</p>
+    </footer>
+  </div>
 </body>
 </html>

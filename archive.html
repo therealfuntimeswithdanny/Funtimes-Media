@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Archives - Made By Danny UK</title>
+  <script src="https://kit.fontawesome.com/0ca27f8db1.js" crossorigin="anonymous"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
+  <meta name="viewport" content="width=960">
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* Base Color Palette */
+    :root {
+      --primary: #2C3E50;    /* Dark slate blue for text headings */
+      --secondary: #ecf0f1;  /* Light background */
+      --accent: #e74c3c;     /* Vibrant red (accent) */
+      --header-bg: #34495E;  /* Muted blue for header */
+      --widget-bg: #f7f7f7;
+    }
+    
+    /* Dark Mode Color Palette */
+    [data-theme="dark"] {
+      --primary: #ddd;
+      --secondary: #333;
+      --accent: #ffa500;
+      --header-bg: #222;
+      --widget-bg: #555;
+    }
+    
+    /* Body & Overall Container */
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--secondary);
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    .container {
+      width: 1080px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    
+    /* Header */
+    header {
+      background: var(--header-bg);
+      color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+        /* Disclaimer Section */
+    .disclaimer {
+      background: #fff3cd;
+      border: 1px solid #ffeeba;
+      padding: 10px;
+      margin-bottom: 20px;
+      color: #856404;
+    }
+    .disclaimer h2 {
+      font-size: 1.2em;
+      margin-bottom: 5px;
+    }
+      
+    header h1 {
+      font-size: 2em;
+    }
+    
+    nav ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+    
+    nav ul li {
+      display: inline;
+      margin-right: 15px;
+    }
+    
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
+    
+    /* Layout Wrapper for Left Ads, Archive Listings, and Right Sidebar */
+    .content-wrapper {
+      overflow: hidden;
+    }
+    
+    /* Left Ads Section */
+    .left-ads {
+      float: left;
+      width: 170px;
+      margin-right: 10px;
+      background: var(--widget-bg);
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    
+    .left-ads h3 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: var(--primary);
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+    }
+    
+    .left-ads p, .left-ads ul {
+      font-size: 0.9em;
+      margin-bottom: 10px;
+    }
+    
+    .left-ads ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .left-ads ul li {
+      margin-bottom: 5px;
+    }
+    
+    /* Main Content – Archive Listings */
+    .main-content {
+      float: left;
+      width: 560px;
+    }
+    
+    .main-content h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+    
+    /* Search Tool */
+    .search-container {
+      margin-bottom: 20px;
+    }
+    
+    .search-container input {
+      width: calc(100% - 100px);
+      padding: 8px;
+      border: 1px solid #ccc;
+    }
+    
+    .search-container button {
+      width: 80px;
+      padding: 8px;
+      background: var(--accent);
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+    
+    /* Archive Articles */
+    article {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px dashed #ccc;
+    }
+    
+    article h3 {
+      font-size: 1.5em;
+      margin-bottom: 5px;
+      color: var(--primary);
+    }
+    
+    article p {
+      margin-bottom: 10px;
+    }
+    
+    article a {
+      text-decoration: none;
+      color: var(--accent);
+    }
+    
+    /* Right Sidebar Widgets */
+    .sidebar {
+      float: right;
+      width: 240px;
+      background: var(--widget-bg);
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    
+    .sidebar h3 {
+      margin-bottom: 10px;
+      font-size: 1.2em;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+      color: var(--primary);
+    }
+    
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 10px;
+    }
+    
+    .sidebar ul li {
+      margin-bottom: 5px;
+    }
+    
+    .sidebar ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+    
+    .sidebar p {
+      font-size: 0.9em;
+    }
+    
+    /* Footer */
+    footer {
+      clear: both;
+      border-top: 2px solid #ddd;
+      padding-top: 20px;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #777;
+    }
+    
+    /* Clearfix Utility */
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* Load More Button */
+    #loadMoreBtn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto;
+      font-size: 16px;
+    }
+    
+    #loadMoreBtn:hover {
+      opacity: 0.8;
+    }
+      /* Contact Form Styles (2015 style) */
+    .contact-form input,
+    .contact-form textarea {
+      width: calc(100% - 20px);
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+    }
+    .contact-form button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+    .contact-form button:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <header>
+      <h1>Made By Danny UK</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="photos.html">Photos</a></li>
+          <li><a href="archives.html">Archives</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <!-- Main Content Area with Left Ads, Archive Listings, and Right Sidebar -->
+    <div class="content-wrapper">
+      
+      <!-- Left Ads Section -->
+      <aside class="left-ads">
+       <h3>Archive Info</h3>
+        <p>/archive.html will load 3 Blog Post at a time to speed up laoding time.</p>
+        <h3>Social Links</h3>
+        <p>All of MBD Social Links</p>
+        <ul>
+          <li><a href="https://bsky.app/profile/madebydanny.uk">Bluesky</a></li>
+          <li><a href="https://gtihub.com/therealfuntimeswitdanny">Github</a></li>
+          <li><a href="https://youtube.com/@MadeByDanny">YouTube</a></li>
+          <li><a href="https://twitch.tv/funtimeswithdanny">Twitch</a></li>
+          <li><a href="https://reddit.com/u/funtimeswithdanny">Reddit</a></li>
+        </ul>
+        <h3>Privacy Policy</h3>
+        <p>
+          <b>Last Updated: 02/26/2025 20:57:07 EST</b><br>
+          This site is Protected by Cloudflare, The following data will be saved to Cloudflare Servers.<br>
+          Device Manufacturer, Operating System (OS), Screen size, Country Accessed from, Browser, Time, Date, Time Zone, ISP (Sometimes) and https version.
+        </p>
+      </aside>
+      
+      <!-- Archive Listings in Main Content -->
+      <div class="main-content">
+        <h2>Blog Archives</h2>
+        
+        <!-- Search Tool -->
+        <div class="search-container">
+          <input type="text" id="searchBox" placeholder="Search by title, date, month or year...">
+          <button id="searchButton">Search</button>
+        </div>
+        <section class="disclaimer">
+      <h2><i class="fa-solid fa-circle-info" style="color: #856404;"></i> Disclaimer(S)</h2>
+      <p>
+        The opinions expressed on this blog are solely those of the author and do not reflect the views of any affiliated organizations. All information is provided for informational purposes only; please verify independently before acting on any of the content.
+        <br>All  Content Copyright and Belong to Daniel Morrisey, Sharing without attribution is a violation of TOS.<br><b>All content on this site is under CC BY-NC 4.0</b>
+      </p>
+    </section>
+        <!-- Archive Posts will be loaded here dynamically -->
+        <div id="archivePosts"></div>
+        
+        <!-- Load More Button -->
+        <button id="loadMoreBtn">Load More</button>
+      </div>
+      
+      <!-- Right Sidebar Widgets -->
+      <aside class="sidebar">
+        <h3>Recent Posts</h3>
+        <ul>
+          <li><a href="/blog/ai-basics.html">Alexa+</a></li>
+          <li><a href="/blog/web-design-future.html">iPhone 16e</a></li>
+          <li><a href="/blog/bluesky.html">Stop Using Threads & Twitter use Bluesky instead</a></li>
+        </ul>
+        <h3>Archives By Month</h3>
+        <ul>
+          <li><a href="/archive.html?search=March%20">March</a></li>
+          <li><a href="/archive.html?search=February%20">February </a></li>
+          <li><a href="/archive.html?search=January%20">January</a></li>
+        </ul>
+        <h3>Have Feed Back<br>Share It With Us</h3>
+        <form class="contact-form" action="https://forms-turnstile.madebydannyuk.workers.dev/" method="post">
+          <p><input type="text" name="name" placeholder="Your Name" required></p>
+          <p><input type="email" name="email" placeholder="Your Email" required></p>
+          <p><textarea name="message" rows="4" placeholder="Your Message" required></textarea></p>
+            <div class="cf-turnstile" data-sitekey=""></div><br><br>
+          <p><button type="submit"> Send <i class="fa-solid fa-paper-plane" style="color: #ffffff;"></i></button></p>
+        </form>
+      </aside>
+    </div>
+    
+    <!-- Footer Section -->
+    <footer>
+      <p>&copy; 2024-2028 Made By Danny UK | Performance &amp; Security With <i class="fa-solid fa-heart" style="color: #ff0026;"></i> by Cloudflare | Secured by Cloudflare Turnstile | All content on this site is under CC BY-NC 4.0</p>
+    </footer>
+  </div>
+  <script>
+    // Example archive posts data
+    var posts = [
+      {
+        title: "Alexa+",
+        date: "March 10, 2025",
+        excerpt: "The New Alexa AI is here and here is what I have to say",
+        url: "/blog/3-10-25.html"
+      },
+      {
+        title: "Stop using Threads or Twitter use <br>Bluesky instead",
+        date: "Posted on February 14, 2025",
+        excerpt: "I stoped using Threads and switched to Bluesky and I love it!",
+        url: "/blog/2-14-25.html"
+      },
+      {
+        title: "Microsoft 365 Copilot",
+        date: "Posted on January 20, 2025",
+        excerpt: " In this new blog post made in Microsoft Word with the help of Copilot. I try my best to explain what Microsoft 365 Copilot is and what it has to do with personal plans.",
+        url: "/blog/1-20-25.html"
+      },
+      {
+        title: "iPhone 16e",
+        date: "Posted on February 20, 2025",
+        excerpt: "The iPhone 16e is the newest iPhone; how does it compare to the SE GEN 3.",
+        url: "/blog/2-20-25.html"
+      }
+    ];
+    
+    var postsPerPage = 3;
+    var currentIndex = 0;
+    var filteredPosts = posts; // initially, no filter applied
+    
+    // Function to render posts from the current index
+    function renderPosts() {
+      var archiveContainer = document.getElementById("archivePosts");
+      var loadMoreBtn = document.getElementById("loadMoreBtn");
+      
+      // Loop to show postsPerPage posts if available
+      for (var i = currentIndex; i < currentIndex + postsPerPage && i < filteredPosts.length; i++) {
+        var post = filteredPosts[i];
+        var article = document.createElement("article");
+        article.innerHTML = "<h3>" + post.title + "</h3>" +
+                            "<p><em>Posted on " + post.date + "</em></p>" +
+                            "<p>" + post.excerpt + "</p>" +
+                            "<a href='" + post.url + "'>Read More &raquo;</a>";
+        archiveContainer.appendChild(article);
+      }
+      
+      currentIndex += postsPerPage;
+      
+      // Hide Load More button if all posts are displayed
+      if (currentIndex >= filteredPosts.length) {
+        loadMoreBtn.style.display = "none";
+      } else {
+        loadMoreBtn.style.display = "block";
+      }
+    }
+    
+    // Function to perform search based on query (searching title & date)
+    function performSearch(query) {
+      var archiveContainer = document.getElementById("archivePosts");
+      archiveContainer.innerHTML = ""; // clear previous posts
+      currentIndex = 0;
+      
+      if (query.trim() === "") {
+        filteredPosts = posts;
+      } else {
+        query = query.toLowerCase();
+        filteredPosts = posts.filter(function(post) {
+          return post.title.toLowerCase().indexOf(query) !== -1 ||
+                 post.date.toLowerCase().indexOf(query) !== -1;
+        });
+      }
+      
+      renderPosts();
+    }
+    
+    // Initial render
+    renderPosts();
+    
+    // Load More button event listener
+    document.getElementById("loadMoreBtn").addEventListener("click", function() {
+      renderPosts();
+    });
+    
+    // Search button event listener and update URL query string
+    document.getElementById("searchButton").addEventListener("click", function() {
+      var query = document.getElementById("searchBox").value;
+      // Update URL query string using History API
+      var newUrl = window.location.pathname + "?search=" + encodeURIComponent(query);
+      window.history.pushState({search: query}, "", newUrl);
+      performSearch(query);
+    });
+    
+    // On page load, check if there is a search query in the URL and perform search accordingly
+    window.addEventListener("load", function() {
+      var urlParams = new URLSearchParams(window.location.search);
+      if(urlParams.has("search")){
+        var initialQuery = urlParams.get("search");
+        document.getElementById("searchBox").value = initialQuery;
+        performSearch(initialQuery);
+      }
+    });
+  </script>
+</body>
+</html>
