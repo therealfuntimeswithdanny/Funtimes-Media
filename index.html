@@ -4,224 +4,9 @@
   <meta charset="UTF-8">
   <title>Made By Danny UK</title>
   <script src="https://kit.fontawesome.com/0ca27f8db1.js" crossorigin="anonymous"></script>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
-
-  <meta name="viewport" content="width=960">
-  <style>
-    /* Basic Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    /* Base Color Palette */
-    :root {
-      --primary: #2C3E50;    /* Dark slate blue for text headings */
-      --secondary: #ecf0f1;  /* Light background */
-      --accent: #e74c3c;     /* Vibrant red (accent) */
-      --header-bg: #34495E;  /* Muted blue for header */
-      --widget-bg: #f7f7f7;
-    }
-    
-    /* Body & Overall Container */
-    body {
-      font-family: Arial, sans-serif;
-      background: var(--secondary);
-      color: #333;
-      line-height: 1.6;
-    }
-    .container {
-      width: 1080px;
-      margin: 20px auto;
-      background: #fff;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    
-    /* Header */
-    header {
-      background: var(--header-bg);
-      color: #fff;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-    header h1 {
-      font-size: 2em;
-    }
-    nav ul {
-      list-style: none;
-      margin-top: 10px;
-    }
-    nav ul li {
-      display: inline;
-      margin-right: 15px;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-    }
-    
-    /* Featured Images Section (Home Screen Part) */
-    .featured-images {
-      margin-bottom: 20px;
-      overflow: hidden;
-    }
-    .featured-images img {
-      width: 32%;
-      margin-right: 2%;
-      float: left;
-      border: 3px solid var(--accent);
-    }
-    .featured-images img:last-child {
-      margin-right: 0;
-    }
-    
-    /* Disclaimer Section */
-    .disclaimer {
-      background: #fff3cd;
-      border: 1px solid #ffeeba;
-      padding: 10px;
-      margin-bottom: 20px;
-      color: #856404;
-    }
-    .disclaimer h2 {
-      font-size: 1.2em;
-      margin-bottom: 5px;
-    }
-      
-    /* ads Section */
-    .top-ads {
-      background: var(--widget-bg);
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin-bottom: 20px;
-      color: var(--primary);
-      text-align: center;
-    }
-    .top-ads h2 {
-      font-size: 1.2em;
-      margin-bottom: 5px;
-    }
-    /* Layout Wrapper for Left Ads, Main Content, and Right Sidebar */
-    .content-wrapper {
-      overflow: hidden;
-    }
-    /* Left Ads Section */
-    .left-ads {
-      float: left;
-      width: 170px;
-      margin-right: 10px;
-      background: var(--widget-bg);
-      padding: 10px;
-      border: 1px solid #ccc;
-    }
-    .left-ads h3 {
-      font-size: 1.2em;
-      margin-bottom: 10px;
-      color: var(--primary);
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 5px;
-    }
-    .left-ads p {
-      font-size: 0.9em;
-      margin-bottom: 10px;
-    }
-
-    /* Main Blog Content */
-    .main-content {
-      float: left;
-      width: 560px;
-    }
-    article {
-      margin-bottom: 20px;
-      padding-bottom: 20px;
-      border-bottom: 1px dashed #ccc;
-    }
-    article h2 {
-      font-size: 1.5em;
-      margin-bottom: 10px;
-      color: var(--primary);
-    }
-    article p {
-      margin-bottom: 10px;
-    }
-    article a {
-      text-decoration: none;
-      color: var(--accent);
-    }
-    
-    /* Right Sidebar Widgets */
-    .sidebar {
-      float: right;
-      width: 240px;
-      background: var(--widget-bg);
-      padding: 10px;
-      border: 1px solid #ccc;
-    }
-    .sidebar h3 {
-      margin-bottom: 10px;
-      font-size: 1.2em;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 5px;
-      color: var(--primary);
-    }
-    .sidebar ul {
-      list-style: none;
-      padding-left: 0;
-      margin-top: 10px;
-    }
-    .sidebar ul li {
-      margin-bottom: 5px;
-    }
-    .sidebar ul li a {
-      text-decoration: none;
-      color: #333;
-    }
-    
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    
-    /* Contact Form Styles (2015 style) */
-    .contact-form input,
-    .contact-form textarea {
-      width: calc(100% - 20px);
-      padding: 8px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-    }
-    .contact-form button {
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-    }
-    .contact-form button:hover {
-      opacity: 0.8;
-    }
-    
-    /* Footer */
-    footer {
-      clear: both;
-      border-top: 2px solid #ddd;
-      padding-top: 20px;
-      text-align: center;
-      margin-top: 20px;
-      font-size: 0.9em;
-      color: #777;
-    }
-    
-    /* Clearfix utility */
-    .clearfix::after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-  </style>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="/styles/index.css">
 </head>
 <body>
   <div class="container">
@@ -371,7 +156,7 @@
       </p>
     </footer>
     <section class="top-ads">
-      <p>Secure Your Self Online with Nord VPN, <a href="https://madebydanny.uk/nordvpn">Get Nord VPN</a> now! | <b>Open Ad Space!</b> Want your Ad Here? For just $5 USD <a href="/ads/ad-sign-up.html">Start Now!</a></p>
+      <p>Find The Right Colors for Your Website <a href="https://coolors.co/?ref=67bfe1574f39cf000b6440bc">Here</a></p>
     </section>
   </div>
 <!-- Default Statcounter code for MBD
@@ -392,7 +177,6 @@ http://funtimesmedia.uk -->
   alt="Web Analytics"
   referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
   <!-- End of Statcounter Code -->
-  <a href="https://statcounter.com/p13076918/?guest=1">View My
-  Stats</a>
+  <a href="https://statcounter.com/p13076918/?guest=1"></a>
 </body>
 </html>
