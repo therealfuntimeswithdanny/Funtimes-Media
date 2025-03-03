@@ -201,5 +201,24 @@
       <p>&copy; 2024-2028 Made By Danny UK | Performance & Security With  <i class="fa-solid fa-heart" style="color: #ff0000;"></i> by Cloudflare | Secured by Cloudflare Turnstile | All content on this site is under CC BY-NC 4.0</p>
     </footer>
   </div>
+  <script>
+    (function() {
+      document.addEventListener('DOMContentLoaded', function() {
+        const seoData = {
+          url: window.location.href,
+          title: document.title || "",
+          description: (document.querySelector("meta[name='description']") || {}).content || "",
+          content: document.body.innerText.trim().slice(0, 200)
+        };
+  
+        fetch('https://search.madebydanny.uk/store', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(seoData)
+        }).then(response => console.log('Indexed:', response.status))
+          .catch(err => console.error('Indexing failed:', err));
+      });
+    })();
+  </script>
 </body>
 </html>

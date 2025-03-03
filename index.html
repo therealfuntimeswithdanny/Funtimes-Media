@@ -171,6 +171,26 @@
       <p>Find The Right Colors for Your Website <a href="https://coolors.co/?ref=67bfe1574f39cf000b6440bc">Here</a></p>
     </section>
   </div>
+  <script>
+    (function() {
+      document.addEventListener('DOMContentLoaded', function() {
+        const seoData = {
+          url: window.location.href,
+          title: document.title || "",
+          description: (document.querySelector("meta[name='description']") || {}).content || "",
+          content: document.body.innerText.trim().slice(0, 200)
+        };
+  
+        fetch('https://search.madebydanny.uk/store', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(seoData)
+        }).then(response => console.log('Indexed:', response.status))
+          .catch(err => console.error('Indexing failed:', err));
+      });
+    })();
+  </script>
+  
 <!-- Default Statcounter code for MBD
 http://funtimesmedia.uk -->
 <script type="text/javascript">

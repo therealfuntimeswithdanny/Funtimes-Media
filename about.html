@@ -351,5 +351,24 @@ I love it – and it’s free. That’s why our websites are fast, why simple th
       </p>
     </footer>
   </div>
+  <script>
+    (function() {
+      document.addEventListener('DOMContentLoaded', function() {
+        const seoData = {
+          url: window.location.href,
+          title: document.title || "",
+          description: (document.querySelector("meta[name='description']") || {}).content || "",
+          content: document.body.innerText.trim().slice(0, 200)
+        };
+  
+        fetch('https://search.madebydanny.uk/store', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(seoData)
+        }).then(response => console.log('Indexed:', response.status))
+          .catch(err => console.error('Indexing failed:', err));
+      });
+    })();
+  </script>
 </body>
 </html>
