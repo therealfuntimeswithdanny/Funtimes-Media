@@ -343,16 +343,17 @@
       </p>
     </section>
     <div id="blog-posts-widget"></div>
-    <script>
-      (function() {
-        fetch('https://your-worker-domain.example.com/api/posts')
-          .then(response => response.text())
-          .then(html => {
-            document.getElementById('blog-posts-widget').innerHTML = html;
-          })
-          .catch(err => console.error('Failed to load posts:', err));
-      })();
-    </script>
+<script>
+  (function() {
+    fetch('https://blog-post.madebydannyuk.workers.dev/api/posts')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('blog-posts-widget').innerHTML = html;
+      })
+      .catch(err => console.error('Failed to load posts:', err));
+  })();
+</script>
+
     
       
       <!-- Right Sidebar Widgets -->
