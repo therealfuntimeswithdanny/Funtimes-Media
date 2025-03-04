@@ -80,6 +80,19 @@
       font-size: 1.2em;
       margin-bottom: 5px;
     }
+        /* search Section */
+        .search {
+          background: var(--widget-bg);
+          border: 1px solid #ccc;
+          padding: 10px;
+          margin-bottom: 20px;
+          color: var(--primary);
+          text-align: center;
+        }
+        .search-ads h2 {
+          font-size: 1.2em;
+          margin-bottom: 5px;
+        }
       
     /* ads Section */
     .top-ads {
