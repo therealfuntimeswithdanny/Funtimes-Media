@@ -192,6 +192,51 @@
       <p>Find The Right Colors for Your Website <a href="https://coolors.co/?ref=67bfe1574f39cf000b6440bc">Here</a></p>
     </section>
   </div>
+    <!-- Modal Pop-Up -->
+    <div id="adBlockerModal" class="modal">
+      <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <h2>Ad Blocker Detected</h2>
+        <p>
+          It appears you're using an ad blocker. Please consider disabling it to help support our website and its content.
+        </p>
+      </div>
+    </div>
+  
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Select the dummy ad elements
+        var topAd = document.querySelector('.top-ads');
+        var leftAd = document.querySelector('.left-ads');
+  
+        // Helper function: Returns true if the element is missing or has zero height
+        function isAdBlocked(element) {
+          return !element || element.offsetHeight === 0;
+        }
+  
+        // If either ad element is blocked, display the modal pop-up
+        if (isAdBlocked(topAd) || isAdBlocked(leftAd)) {
+          var modal = document.getElementById('adBlockerModal');
+          if (modal) {
+            modal.style.display = "block";
+          }
+        }
+  
+        // Close modal when the close button is clicked.
+        document.getElementById('closeModal').onclick = function() {
+          document.getElementById('adBlockerModal').style.display = "none";
+        };
+  
+        // Close modal when user clicks outside the modal content.
+        window.onclick = function(event) {
+          var modal = document.getElementById('adBlockerModal');
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        };
+      });
+    </script>
+  
   <!-- Load the hosted JS file -->
   <script src="yellow-rain-cf-code-for-embeding.madebydanny.uk/cf-search-widget.js"></script>
   <script>
