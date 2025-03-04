@@ -342,12 +342,18 @@
         <br>All  Content Copyright and Belong to Daniel Morrisey, Sharing without attribution is a violation of TOS.<br><b>All content on this site is under CC BY-NC 4.0</b>
       </p>
     </section>
-        <!-- Archive Posts will be loaded here dynamically -->
-        <div id="archivePosts"></div>
-        
-        <!-- Load More Button -->
-        <button id="loadMoreBtn">Load More</button>
-      </div>
+    <div id="blog-posts-widget"></div>
+    <script>
+      (function() {
+        fetch('https://your-worker-domain.example.com/api/posts')
+          .then(response => response.text())
+          .then(html => {
+            document.getElementById('blog-posts-widget').innerHTML = html;
+          })
+          .catch(err => console.error('Failed to load posts:', err));
+      })();
+    </script>
+    
       
       <!-- Right Sidebar Widgets -->
       <aside class="sidebar">
