@@ -5,7 +5,7 @@
   <title>Made By Danny UK</title>
   <script src="https://kit.fontawesome.com/0ca27f8db1.js" crossorigin="anonymous"></script>
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
-  <link rel="stylesheet" href="yellow-rain-cf-code-for-embeding.madebydanny.uk/cf-search-widget.css">
+  <link rel="stylesheet" href="https://yellow-rain-cf-code-for-embeding.pages.dev/cf-search-widget.css">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="/styles/index.css">
   <meta name="description" content="Made by Danny UK is a small site Made By a 12 year-old kid named Danny. ">
@@ -47,7 +47,19 @@
     </section>
     <section class="top-ads">
       <p>Secure Your Self Online with Nord VPN, <a href="https://madebydanny.uk/nordvpn">Get Nord VPN</a> now! | <b>Open Ad Space!</b> Want your Ad Here? For just $5 USD <a href="/ads/ad-sign-up.html">Start Now!</a></p>
-      <div id="cf-search-widget"></div>
+        <!-- Container for the search widget -->
+  <div id="cf-search-widget"></div>
+
+  <!-- Include the externally hosted JS file -->
+  <script src="https://yellow-rain-cf-code-for-embeding.pages.dev/cf-search-widget.js"></script>
+  <script>
+    // Initialize the search widget.
+    // Update the endpoint to point to your Cloudflare Worker search endpoint.
+    SearchWidget.init({
+      endpoint: "https://search.madebydanny.uk/search",
+      containerId: "cf-search-widget"
+    });
+  </script>
     </section>
     <!-- Disclaimer Section placed above the floating content -->
     <section class="disclaimer">
