@@ -169,16 +169,13 @@
         </p>
         
         <!-- Contact Form in Right Sidebar, 2015 Style -->
-        <form action="https://dry-sky-4576.madebydannyuk.workers.dev/" method="post">
-          <label for="name">Contact Name:</label>
-          <input type="text" id="name" name="name" required><br><br>
-          <label for="email">Contact Email:</label>
-          <input type="email" id="email" name="email" required><br><br>
-              <label for="message">Message:</label>
-          <input type="text" id="message" name="message" required><br><br>
-          <div class="cf-turnstile" data-sitekey="0x4AAAAAAA7ihsV-4nWA6xAn"></div><br><br>
+        <h3 id="form">Contact US</h3>
+        <form class="contact-form" action="https://dry-sky-4576.madebydannyuk.workers.dev/" method="post">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAAA7ihsV-4nWA6xAn"></div>
           <button type="submit"> [3] Send <i class="fa-solid fa-paper-plane" style="color: #ffffff;"></i></button>
-          
         </form>
       </aside>
     </div>
