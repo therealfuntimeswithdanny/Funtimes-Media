@@ -343,16 +343,34 @@
       </p>
     </section>
     <div id="blog-posts-widget"></div>
-<script>
-  (function() {
-    fetch('https://blog-post.madebydannyuk.workers.dev/api/posts')
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById('blog-posts-widget').innerHTML = html;
-      })
-      .catch(err => console.error('Failed to load posts:', err));
-  })();
-</script>
+    <script>
+      // Replace the URL with your actual Cloudflare Worker domain.
+      fetch('https://blog-post.madebydannyuk.workers.dev/api/posts')
+        .then(response => response.json())
+        .then(data => {
+          const widget = document.getElementById("blog-posts-widget");
+          if (!data.posts || data.posts.length === 0) {
+            widget.innerHTML = "<p>No blog posts available yet.</p>";
+            return;
+          }
+          widget.innerHTML = data.posts.map(post => `
+            <article style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px dashed #ccc;">
+              <h3 style="font-size: 1.5em; margin-bottom: 5px; color: var(--primary, #333);">${post.title}</h3>
+              ${post.date ? `<time style="display:block; margin-bottom:5px; color:#777; font-size:0.9em;" datetime="${post.date}">${post.date}</time>` : ""}
+              <p>${post.content.substring(0, 100)}...</p>
+              <a style="text-decoration:none; color: var(--accent, #007acc);" 
+                 href="${(post.link && post.link.trim()) ? post.link : '/blog/post?id='+post.id}">
+                Read More &raquo;
+              </a>
+            </article>
+          `).join("");
+        })
+        .catch(err => {
+          console.error("Error fetching posts:", err);
+          document.getElementById("blog-posts-widget").innerHTML = "<p>Error loading posts.</p>";
+        });
+    </script>
+    
 
     
       
@@ -386,110 +404,5 @@
       <p>&copy; 2024-2028 Made By Danny UK | Performance &amp; Security With <i class="fa-solid fa-heart" style="color: #ff0026;"></i> by Cloudflare | Secured by Cloudflare Turnstile | All content on this site is under CC BY-NC 4.0</p>
     </footer>
   </div>
-  <script>
-    // Example archive posts data
-    var posts = [
-      {
-        title: "Alexa+",
-        date: "March 10, 2025",
-        excerpt: "The New Alexa AI is here and here is what I have to say",
-        url: "/blog/3-10-25.html"
-      },
-      {
-        title: "Stop using Threads or Twitter use <br>Bluesky instead",
-        date: "Posted on February 14, 2025",
-        excerpt: "I stoped using Threads and switched to Bluesky and I love it!",
-        url: "/blog/2-14-25.html"
-      },
-      {
-        title: "Microsoft 365 Copilot",
-        date: "Posted on January 20, 2025",
-        excerpt: " In this new blog post made in Microsoft Word with the help of Copilot. I try my best to explain what Microsoft 365 Copilot is and what it has to do with personal plans.",
-        url: "/blog/1-20-25.html"
-      },
-      {
-        title: "iPhone 16e",
-        date: "Posted on February 20, 2025",
-        excerpt: "The iPhone 16e is the newest iPhone; how does it compare to the SE GEN 3.",
-        url: "/blog/2-20-25.html"
-      }
-    ];
-    
-    var postsPerPage = 3;
-    var currentIndex = 0;
-    var filteredPosts = posts; // initially, no filter applied
-    
-    // Function to render posts from the current index
-    function renderPosts() {
-      var archiveContainer = document.getElementById("archivePosts");
-      var loadMoreBtn = document.getElementById("loadMoreBtn");
-      
-      // Loop to show postsPerPage posts if available
-      for (var i = currentIndex; i < currentIndex + postsPerPage && i < filteredPosts.length; i++) {
-        var post = filteredPosts[i];
-        var article = document.createElement("article");
-        article.innerHTML = "<h3>" + post.title + "</h3>" +
-                            "<p><em>Posted on " + post.date + "</em></p>" +
-                            "<p>" + post.excerpt + "</p>" +
-                            "<a href='" + post.url + "'>Read More &raquo;</a>";
-        archiveContainer.appendChild(article);
-      }
-      
-      currentIndex += postsPerPage;
-      
-      // Hide Load More button if all posts are displayed
-      if (currentIndex >= filteredPosts.length) {
-        loadMoreBtn.style.display = "none";
-      } else {
-        loadMoreBtn.style.display = "block";
-      }
-    }
-    
-    // Function to perform search based on query (searching title & date)
-    function performSearch(query) {
-      var archiveContainer = document.getElementById("archivePosts");
-      archiveContainer.innerHTML = ""; // clear previous posts
-      currentIndex = 0;
-      
-      if (query.trim() === "") {
-        filteredPosts = posts;
-      } else {
-        query = query.toLowerCase();
-        filteredPosts = posts.filter(function(post) {
-          return post.title.toLowerCase().indexOf(query) !== -1 ||
-                 post.date.toLowerCase().indexOf(query) !== -1;
-        });
-      }
-      
-      renderPosts();
-    }
-    
-    // Initial render
-    renderPosts();
-    
-    // Load More button event listener
-    document.getElementById("loadMoreBtn").addEventListener("click", function() {
-      renderPosts();
-    });
-    
-    // Search button event listener and update URL query string
-    document.getElementById("searchButton").addEventListener("click", function() {
-      var query = document.getElementById("searchBox").value;
-      // Update URL query string using History API
-      var newUrl = window.location.pathname + "?search=" + encodeURIComponent(query);
-      window.history.pushState({search: query}, "", newUrl);
-      performSearch(query);
-    });
-    
-    // On page load, check if there is a search query in the URL and perform search accordingly
-    window.addEventListener("load", function() {
-      var urlParams = new URLSearchParams(window.location.search);
-      if(urlParams.has("search")){
-        var initialQuery = urlParams.get("search");
-        document.getElementById("searchBox").value = initialQuery;
-        performSearch(initialQuery);
-      }
-    });
-  </script>
 </body>
 </html>
