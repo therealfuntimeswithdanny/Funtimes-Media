@@ -80,6 +80,19 @@
       font-size: 1.2em;
       margin-bottom: 5px;
     }
+           /* search Section */
+           .notice {
+            position: fixed;
+            top: 0;
+            left: 0%;
+            width: 100%;
+            background: var(--accent);
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            color: white;
+            text-align: center;
+          }
         /* search Section */
         .search {
           background: var(--widget-bg);
