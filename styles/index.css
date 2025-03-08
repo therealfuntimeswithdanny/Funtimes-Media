@@ -12,6 +12,7 @@
       --accent: #e74c3c;     /* Vibrant red (accent) */
       --header-bg: #34495E;  /* Muted blue for header */
       --widget-bg: #f7f7f7;
+      --good: #6fdc6f;
     }
     
     /* Body & Overall Container */
@@ -87,7 +88,7 @@
             top: 0;
             left: 0%;
             width: 100%;
-            background: var(--accent);
+            background: var(--good);
             border: 1px solid #ccc;
             padding: 10px;
             margin-bottom: 20px;
