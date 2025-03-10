@@ -13,6 +13,7 @@
       --header-bg: #34495E;  /* Muted blue for header */
       --widget-bg: #f7f7f7;
       --good: #6fdc6f;
+      --ok: rgb(104, 104, 231); 
     }
     
     /* Body & Overall Container */
@@ -88,12 +89,16 @@
             top: 0;
             left: 0%;
             width: 100%;
-            background: var(--good);
+            background: var(--ok);
             border: 1px solid #ccc;
             padding: 10px;
             margin-bottom: 20px;
             color: white;
             text-align: center;
+          }
+
+          .notice a {
+            color: white
           }
         /* search Section */
         .search {
