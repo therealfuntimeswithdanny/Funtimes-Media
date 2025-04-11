@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Videos - Showcase</title>
+    <!-- Load FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/0ca27f8db1.js" crossorigin="anonymous"></script>
+    <style>
+      :root {
+        --primary-color: #8B4513;  /* Wood-inspired brown */
+        --accent-red:    #B22222;  /* Red accent */
+        --bg-color:      #f8f1e0;
+        --text-color:    #333;
+      }
+      /* Global Styles */
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Georgia', serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+      header {
+        background: var(--bg-color);
+        padding: 10px 20px;
+        text-align: center;
+      }
+      nav a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: var(--primary-color);
+        font-weight: bold;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 50px auto;
+        padding: 20px;
+        text-align: center;
+      }
+      h1 {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+      }
+      /* Video Grid Styles */
+      .video-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+      .video-card {
+        background-color: #fff;
+        border: 2px solid var(--primary-color);
+        border-radius: 8px;
+        padding: 10px;
+        width: 300px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        overflow: hidden;
+        text-align: left;
+      }
+      .video-card iframe {
+        width: 100%;
+        height: 170px;
+        border: none;
+        border-radius: 4px;
+      }
+      .video-card h3 {
+        font-size: 1.2rem;
+        color: var(--primary-color);
+        margin: 10px 0 5px;
+      }
+      .video-card p {
+        font-size: 1rem;
+        margin: 0;
+      }
+      @media (max-width: 640px) {
+        .video-card {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="newsletter.html">Newsletter</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="video.html">Videos</a>
+      </nav>
+    </header>
+    <div class="container">
+      <h1>Our Videos</h1>
+      <div class="video-grid">
+        <!-- Video Card 1 -->
+        <div class="video-card">
+          <iframe src="" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen></iframe>
+          <h3>Video Title 1</h3>
+          <p>This video explains the latest trends in our industry.</p>
+        </div>
+        <!-- Video Card 2 -->
+        <div class="video-card">
+          <iframe src="" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+          <h3>Video Title 2</h3>
+          <p>Discover our unique approach and creative projects through this video.</p>
+        </div>
+        <!-- Video Card 3 -->
+        <div class="video-card">
+          <iframe src="" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+          <h3>Video Title 3</h3>
+          <p>Learn more about the process behind our most popular video content.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
