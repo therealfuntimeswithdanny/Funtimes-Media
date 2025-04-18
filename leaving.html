@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leaving Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      color: #cc0000;
+    }
+    p {
+      color: #333;
+      font-size: 1.1rem;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Warning: You're Leaving Our Website!</h1>
+  <p id="message">Preparing to redirect...</p>
+  <p>If the redirection does not occur automatically, please click the link: <a id="redirectLink" href="#">here</a>.</p>
+
+  <script>
+    // Extract everything after the '?' in the URL
+    let query = window.location.search.substring(1); // Removes the '?' character
+
+    // Decode the parameter, or use a default if empty
+    let redirectUrl = query ? decodeURIComponent(query) : "https://exmaple.com";
+
+    // Update the message and clickable link with the redirect URL
+    document.getElementById("message").innerHTML = 
+      'You will be redirected to <a href="' + redirectUrl + '">' + redirectUrl + '</a> in 5 seconds.';
+    document.getElementById("redirectLink").href = redirectUrl;
+
+    // Redirect after 5 seconds (5000 milliseconds)
+    setTimeout(() => {
+      window.location.href = redirectUrl;
+    }, 5000);
+  </script>
+</body>
+</html>
