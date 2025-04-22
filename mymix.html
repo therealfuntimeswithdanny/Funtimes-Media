@@ -3,22 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Danny's Blog | Made by Danny UK</title>
-  <link type="image/x-icon" rel="shortcut icon" href="https://cdn.madebydanny.uk/mbd.png"/>
-  <script src="https://kit.fontawesome.com/0ca27f8db1.js" crossorigin="anonymous"></script>
-    <!-- Basic SEO Meta Tags -->
-<meta name="title" content="Danny's Blog | Made by Danny UK" />
-<meta name="description" content="Read my awesome blog, clean & fresh! By Danny"/>
+  <title>My Mix | Made by Danny UK</title>
+     <link type="image/x-icon" rel="shortcut icon" href="https://cdn.madebydanny.uk/mbd.png"/>
+    <meta name="title" content="Home - Danny Morrisey | Made by Danny UK" />
+<meta name="description" content="My name is Danny, I know how to code HTML, CSS and Some Javascript! I work at Funtimes Media and I can build PCs."/>
 <meta name="keywords" content="MBD, mbd, MBDUK, Made by Danny, Made by Danny UK" />
 <meta name="author" content="Danny Morrisey" />
 
 <!-- Open Graph (OG) for Social Sharing -->
-<meta property="og:title" content="Danny's Blog | Made by Danny UK" />
-<meta property="og:description" content="Read my awesome blog, clean & fresh! By Danny" />
+<meta property="og:title" content="Home - Danny Morrisey | Made by Danny UK" />
+<meta property="og:description" content="My name is Danny, I know how to code HTML, CSS and Some Javascript! I work at Funtimes Media and I can build PCs. />
 <meta property="og:image" content="https://cdn.bsky.app/img/banner/plain/did:plc:tnnl6qjjj4lquabzmsuu34ip/bafkreifuamgr2sond5i4f52x2y4jau3owhomzm325zl6i5fya4heq3kkzy@jpeg" />
 <meta property="og:url" content="https://madebydanny.uk/blog" />
 <meta property="og:type" content="website"/>
-
+  <script src="https://kit.fontawesome.com/0ca27f8db1.js" crossorigin="anonymous"></script>
   <style>
     /* Global Reset */
     * {
@@ -34,51 +32,29 @@
       text-align: left;
       padding: 20px;
     }
-    .blog {
+    .music-container {
       max-width: 800px;
       margin: 0 auto;
     }
-    .blog h1 {
+    .music-title {
       font-size: 2em;
+      margin-bottom: 15px;
+    }
+    .spotify-embed {
       margin-bottom: 20px;
-    }
-    .post {
-      border-bottom: 1px solid #fff;
-      padding-bottom: 15px;
-      margin-bottom: 20px;
-      transition: transform 0.3s;
-    }
-    .post:hover {
-      transform: scale(1.02);
-    }
-    .post h2 {
-      font-size: 1.5em;
-      margin-bottom: 10px;
-    }
-    .post .tags {
-      font-size: 0.9em;
-      color: #ccc;
-      margin-bottom: 10px;
-    }
-    .post p {
-      margin-bottom: 10px;
-    }
-    .post a {
-      color: #fff;
-      font-weight: bold;
-      text-decoration: none;
-      transition: color 0.3s;
-      display: inline-block;
-    }
-    .post a:hover {
-      color: #ccc;
     }
     .back-link {
       display: block;
       margin-top: 20px;
       font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
     }
-    a {
+    .back-link:hover {
+      color: #ccc;
+    }
+          a {
         color: white;
         }
        .social-links {
@@ -94,35 +70,19 @@
     }
     .social-links a:hover {
       color: #ccc;
-    }
+    
   </style>
 </head>
 <body>
-  <div class="blog">
-    <h1>Danny's Blog</h1>
+  <div class="music-container">
+    <h1 class="music-title"><i class="fa-solid fa-music"></i> My Mix</h1>
 
-    <div class="post">
-      <h2>Bluesky Adds Verification via Blue Check Marks</h2>
-      <p class="tags">#SocialMedia #Bluesky</p>
-      <p>Bluesky is adding Blue Check Marks for Verification of Bluesky Accounts! Hopefully I get one!</p>
-      <a href="4-21-25.html" target="_blank">Read More</a>
+    <!-- Spotify Playlist Embed -->
+    <div class="spotify-embed">
+      <iframe style="border-radius:12px" src="" width="100%" height="380" frameborder="0" allowtransparency="true" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
     </div>
 
-    <div class="post">
-      <h2>Skylight Social is here a new way to watch short videos!</h2>
-      <p class="tags">#Design #Creativity</p>
-      <p>Tori (buildwithtori.com)- skylight.social is an Tik Tok like app powered by the AT Protocol!</p>
-      <a href="4-20-25.html" target="_blank">Read More</a>
-    </div>
-
-    <div class="post">
-      <h2>Blog Post Title 3</h2>
-      <p class="tags">#Personal #Reflections</p>
-      <p>A short preview of the third blog post.</p>
-      <a href="post3.html" target="_blank">Read More</a>
-    </div>
-
-    <a href="/index.html" class="back-link">← Back to Bio</a>
+    <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Bio</a>
       <h3><i class="fa-solid fa-copyright"></i> 2024-2028 Made by Danny UK | A Funtimes Media Company</h3>
        <div class="social-links">
       <a href="https://bsky.app/profile/madebydanny.uk" target="_blank"><i class="fa-brands fa-bluesky"></i></a>
