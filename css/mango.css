@@ -37,7 +37,7 @@
     margin-top: 20px;
   }
   .social-links a {
-    color: #fff;
+    color: #FF8242;
     font-weight: bold;
     text-decoration: none;
     transition: color 0.3s;
@@ -46,5 +46,60 @@
     color: #ccc;
   }
   a {
-      color: white;
+      color: #FF8242;
       }
+    /* Popup overlay styling */
+    #popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: none; /* Hidden by default */
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    /* Popup box styling */
+    #popup {
+      background: #FFCC22;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 90%;
+      text-align: center;
+      position: relative;
+    }
+    /* Popup image */
+    #popup img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    /* Buttons */
+    #popup button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #1184fe;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    /* Close icon at top-right */
+    #close {
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      background: transparent;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: #333;
+    }
+    /* Checkbox styling */
+    #never-show {
+      margin-top: 10px;
+      cursor: pointer;
+    }
