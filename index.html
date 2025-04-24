@@ -9,7 +9,7 @@
 <meta name="description" content="My name is Danny, I know how to code HTML, CSS and Some Javascript! I work at Funtimes Media and I can build PCs."/>
 <meta name="keywords" content="MBD, mbd, MBDUK, Made by Danny, Made by Danny UK" />
 <meta name="author" content="Danny Morrisey" />
-<link rel="stylesheet" href="/css/mango.css">
+<link rel="stylesheet" href="css/mango.css">
 <!-- Open Graph (OG) for Social Sharing -->
 <meta property="og:title" content="Home - Danny Morrisey | Made by Danny UK" />
 <meta property="og:description" content="My name is Danny, I know how to code HTML, CSS and Some Javascript! I work at Funtimes Media and I can build PCs."/>
@@ -18,7 +18,64 @@
 <meta property="og:type" content="website"/>
   <script src="https://kit.fontawesome.com/0ca27f8db1.js" crossorigin="anonymous"></script>
 </head>
+    <style>
+        .navbar {
+  background-color: #FFCC22;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border: 2px solid #FF8242;
+}
+
+.navbar .logo {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2em;
+  margin-right: 15px;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #1184fe;
+}
+</style>
 <body>
+    <nav class="navbar">
+  <div class="logo">Made by Danny UK</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="/blog/index.html">Blog</a>
+    <a href="photos.html"> Photos</a>
+    <a>|</a>
+      <icons>
+          <a href="https://bsky.app/profile/madebydanny.uk" target="_blank"><i class="fa-brands fa-bluesky"></i></a>
+      <a href="https://twitch.tv/funtimeswithdanny" target="_blank"><i class="fa-brands fa-twitch"></i></a>
+      <a href="https://youtube.com/@MadebyDanny" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://github.com/therealfuntimeswithdanny" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="mailto:dannymorrisey@madebydanny.uk" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://danielmorrisey.start.page" target="_blank"><i class="fa-brands fa-buffer"></i></a>
+      <a href="https://madebydanny.uk/rss" target="_blank"><i class="fa-solid fa-rss"></i></a>
+      <a href="https://discord.com/users/therealfuntimeswithdanny" target="_blank"><i class="fa-brands fa-discord"></i></a>
+      <a href="https://www.dropbox.com/referrals/AAAYO3ZZ7xlUAT6T79Bdn1A5dsyrCWUPOBs?src=global9" target="_blank"><i class="fa-brands fa-dropbox"></i></a>
+      <a href="https://reddit.com/u/funtimeswithdanny" target="_blank"><i class="fa-brands fa-reddit"></i></a>
+      <a href="#" target="_blank"><i class="fa-brands fa-steam"></i></a>
+      <a href="mailto:dannymorrisey@madebydanny.uk" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://instagram.com/futimeswithdanny" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      </icons>
+  </div>
+</nav>
+
   <div class="bio">
     <img src="https://cdn.bsky.app/img/avatar/plain/did:plc:tnnl6qjjj4lquabzmsuu34ip/bafkreiaohri6eds6gktbmzlhg4o6xpmm4matvpjaxkmrekw5fouvtvz3iq@jpeg" alt="Profile Picture" />
     <h1>Danny Morrisey <i class="fa-solid fa-circle-check" style="color: #1184fe;"></i></h1>
@@ -32,16 +89,16 @@
       <a href="https://danielmorrisey.start.page" target="_blank"><i class="fa-brands fa-buffer"></i></a>
       <a href="https://madebydanny.uk/rss" target="_blank"><i class="fa-solid fa-rss"></i></a>
       <a href="https://discord.com/users/therealfuntimeswithdanny" target="_blank"><i class="fa-brands fa-discord"></i></a>
+      <a href="https://www.dropbox.com/referrals/AAAYO3ZZ7xlUAT6T79Bdn1A5dsyrCWUPOBs?src=global9" target="_blank"><i class="fa-brands fa-dropbox"></i></a>
+      <a href="https://reddit.com/u/funtimeswithdanny" target="_blank"><i class="fa-brands fa-reddit"></i></a>
+      <a href="#" target="_blank"><i class="fa-brands fa-steam"></i></a>
+      <a href="https://instagram.com/futimeswithdanny" target="_blank"><i class="fa-brands fa-instagram"></i></a>
     </div>
     <p>
         <b>Front End Web Developer | Funtimes Media Staff | He/Him</b>
         <br>
-     I'm Danny an Front End Web Developer for Funtimes Media, I also built my own computer. Making apps and websites for Funtimes Media! If you want to email me, do so at <a href="mailto:dannymorrisey@madebydanny.uk">dannymorrisey@madebydanny.uk</a><br>Learn more about Funtimes Media at <a href="https://www.funtimesmedia.uk">www.funtimesmedia.uk</a>
-    </p>
-    <p>
-    <br><b><i><a href="blog/index.html">Blog</a> | <a href="photos.html">Photos</a> | <a href="mymix.html">My Mix</a> | <a href="https://danielmorrisey.start.page">Start Page</a></i></b><br><a href="https://tally.so/r/mJGp6Y">Get your own Bio</a><br>
-      Copyright 2024-2028 Made by Danny UK | A Funtimes Media Comapny | Secured by Cloudflare
-        <br><br>
+     I'm Danny an Front End Web Developer for Funtimes Media, I also built my own computer. Making apps and websites for Funtimes Media! If you want to email me, do so at <a href="mailto:dannymorrisey@madebydanny.uk">dannymorrisey@madebydanny.uk</a>
+    </p>      Copyright 2024-2028 Made by Danny UK | A Funtimes Media Comapny | Secured by Cloudflare<br>
         <i>Made With Help From Linus Tech Tips, Microsoft Copilot, W3Schools and Cloudflare.</i>
     </p>
   </div>
