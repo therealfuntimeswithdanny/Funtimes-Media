@@ -108,3 +108,33 @@
     display: none;
   }
 }
+        .navbar {
+  background-color: #FFCC22;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border: 2px solid #FF8242;
+}
+
+.navbar .logo {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2em;
+  margin-right: 15px;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #1184fe;
+}

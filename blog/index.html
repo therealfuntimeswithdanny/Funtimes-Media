@@ -6,6 +6,7 @@
   <title>Danny's Blog | Made by Danny UK</title>
   <link type="image/x-icon" rel="shortcut icon" href="https://cdn.madebydanny.uk/mbd.png"/>
   <script src="https://kit.fontawesome.com/0ca27f8db1.js" crossorigin="anonymous"></script>
+  <script src="/js/blog.js"></script>
     <!-- Basic SEO Meta Tags -->
 <meta name="title" content="Danny's Blog | Made by Danny UK" />
 <meta name="description" content="Read my awesome blog, clean & fresh! By Danny"/>
@@ -18,7 +19,11 @@
 <meta property="og:image" content="https://cdn.bsky.app/img/banner/plain/did:plc:tnnl6qjjj4lquabzmsuu34ip/bafkreifuamgr2sond5i4f52x2y4jau3owhomzm325zl6i5fya4heq3kkzy@jpeg" />
 <meta property="og:url" content="https://madebydanny.uk/blog" />
 <meta property="og:type" content="website"/>
+<!-- Place this script in your webpage, preferably in the <head> or just before </body> -->
+ <!-- Make sure to include your FontAwesome kit in your main HTML, e.g.: -->
+<!-- <script src="https://kit.fontawesome.com/0ca27f8db1.js" crossorigin="anonymous"></script> -->
 
+    
   <style>
     /* Global Reset */
     * {
@@ -37,6 +42,7 @@
     .blog {
       max-width: 800px;
       margin: 0 auto;
+      margin-top: 45px;
     }
     .blog h1 {
       font-size: 2em;
@@ -134,7 +140,7 @@
 }
 </style>
     <nav class="navbar">
-  <div class="logo">Made by Danny UK</div>
+  <div class="logo">Blog - Made by Danny UK</div>
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="/blog/index.html">Blog</a>
@@ -166,6 +172,9 @@
       <p class="tags">#FuntimesMedia #SocialMedia</p>
       <p>Funtimes Media announces MBDIO, The easiest way to make your bio page for free without coding! Profile Photo, Social Links, Newsletter Sign Up and Bio all on a nice clean design!
       </p>
+      <!-- Use this anywhere in your HTML -->
+<feedback-counter blog-id="blog-1" endpoint="https://likecounter-young-mouse-f484.madebydannyuk.workers.dev"></feedback-counter>
+<br>
       <a href="4-23-25.html" target="_blank">Read More</a>
     </div>
 
@@ -173,6 +182,8 @@
       <h2>No more Linktree time to switch to Buffer</h2>
       <p class="tags">#SocialMedia #Buffer</p>
       <p>After using Linktr.ee for about year I found that Buffer's Start Page is better!</p>
+      <feedback-counter blog-id="blog-2" endpoint="https://likecounter-young-mouse-f484.madebydannyuk.workers.dev"></feedback-counter>
+      <br>
       <a href="4-22-25.html" target="_blank">Read More</a>
     </div>
       
@@ -180,6 +191,8 @@
       <h2>Bluesky Adds Verification via Blue Check Marks</h2>
       <p class="tags">#SocialMedia #Bluesky</p>
       <p>Bluesky is adding Blue Check Marks for Verification of Bluesky Accounts! Hopefully I get one!</p>
+      <feedback-counter blog-id="blog-3" endpoint="https://likecounter-young-mouse-f484.madebydannyuk.workers.dev"></feedback-counter>
+      <br>
       <a href="4-21-25.html" target="_blank">Read More</a>
     </div>
 
@@ -187,6 +200,8 @@
       <h2>Skylight Social is here a new way to watch short videos!</h2>
       <p class="tags">#Design #Creativity</p>
       <p>Tori (buildwithtori.com)- skylight.social is an Tik Tok like app powered by the AT Protocol!</p>
+      <feedback-counter blog-id="blog-4" endpoint="https://likecounter-young-mouse-f484.madebydannyuk.workers.dev"></feedback-counter>
+      <br>
       <a href="4-20-25.html" target="_blank">Read More</a>
     </div>
 
