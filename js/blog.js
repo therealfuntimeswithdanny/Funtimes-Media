@@ -45,13 +45,13 @@
         <div class="container">
           <span><strong>Feedback:</strong></span>
           <button id="likeBtn">
-            <i class="fa-solid fa-thumbs-up"></i> <span id="likeCount">0</span>
+            <i class="fa-solid fa-thumbs-up" style="color: #FFD43B;"></i> <span id="likeCount">0</span>
           </button>
           <button id="loveBtn">
-            <i class="fa-solid fa-heart"></i> <span id="loveCount">0</span>
+            <i class="fa-solid fa-heart" style="color: #ff8787;"></i> <span id="loveCount">0</span>
           </button>
           <button id="dislikeBtn">
-            <i class="fa-solid fa-thumbs-down"></i> <span id="dislikeCount">0</span>
+            <i class="fa-solid fa-thumbs-down" style="color: #74C0FC;"></i> <span id="dislikeCount">0</span>
           </button>
         </div>
       `;
