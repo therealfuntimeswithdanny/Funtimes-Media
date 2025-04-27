@@ -11,6 +11,7 @@
 <meta name="author" content="Danny Morrisey" />
 <link rel="stylesheet" href="blog-styles/mango.css">
 <script src="/js/back-to-top-btn.js"></script>
+<script src="/js/dev-popup.js"></script>
 <!-- Open Graph (OG) for Social Sharing -->
 <meta property="og:title" content="Home - Danny Morrisey | Made by Danny UK" />
 <meta property="og:description" content="My name is Danny, I know how to code HTML, CSS and Some Javascript! I work at Funtimes Media and I can build PCs."/>
@@ -71,46 +72,7 @@
         <i>Made With Help From Linus Tech Tips, Microsoft Copilot, W3Schools and Cloudflare.</i>
     </p>
   </div>
-    <!-- Popup overlay -->
-    <div id="popup-overlay">
-        <div id="popup">
-            <button id="close" aria-label="Close popup">&times;</button>
-          <h1>This site is in development</h1>
-          <h3>This is site may be unstable or not function as intended</b></h3>
-          <h3>Most issues are published <a href="https://bsky.app/profile/madebydanny.uk">here</a></h3>
-          <label>
-            <input type="checkbox" id="never-show"> Never show again
-          </label>
-          <br>
-          <button id="popup-close">Continue to <b>www.madebydanny.uk</b></button>
-        </div>
-      </div>
-  <script>
-    // Wait for the document to load
-    document.addEventListener("DOMContentLoaded", function() {
-      const popupOverlay = document.getElementById('popup-overlay');
-      const neverShowCheckbox = document.getElementById('never-show');
-
-      // Check localStorage for a preference to hide the popup
-      if (!localStorage.getItem('hidePopup')) {
-        // If not set, display the popup as a flex element (centered)
-        popupOverlay.style.display = 'flex';
-      }
-
-      // Function to close the popup
-      function closePopup() {
-        if (neverShowCheckbox.checked) {
-          // Save the preference to never show again
-          localStorage.setItem('hidePopup', 'true');
-        }
-        popupOverlay.style.display = 'none';
-      }
-      
-      // Add event listeners to both the close icon and close button
-      document.getElementById('close').addEventListener('click', closePopup);
-      document.getElementById('popup-close').addEventListener('click', closePopup);
-    });
-  </script>
+    <my-popup></my-popup>
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up fa-bounce"></i></button>
 </body>
 </html>
