@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://madebydanny.uk/</loc>
+  <lastmod>2025-04-27T18:51:26+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://madebydanny.uk/blog/</loc>
+  <lastmod>2025-04-27T18:51:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://madebydanny.uk/photos</loc>
+  <lastmod>2025-04-27T18:51:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://madebydanny.uk/rss</loc>
+  <lastmod>2025-04-27T18:51:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://madebydanny.uk/saved</loc>
+  <lastmod>2025-04-27T18:51:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://madebydanny.uk/blog/4-23-25</loc>
+  <lastmod>2025-04-27T18:51:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://madebydanny.uk/blog/4-22-25</loc>
+  <lastmod>2025-04-27T18:51:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://madebydanny.uk/blog/4-21-25</loc>
+  <lastmod>2025-04-27T18:51:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://madebydanny.uk/blog/4-20-25</loc>
+  <lastmod>2025-04-27T18:51:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>

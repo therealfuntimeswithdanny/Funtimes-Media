@@ -120,12 +120,17 @@
     margin-right: 15px;
     transition: color 0.3s;
   }
-  
+  icon {
+    display: none;
+  }
   .navbar a:hover {
     color: #1184fe;
   }
   @media screen and (max-width: 580px) {
     icons {
       display: none;
+    }
+    icon {
+      display: block;
     }
   }

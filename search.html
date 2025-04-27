@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search www.madebydanny.uk</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .search-box {
+      margin-bottom: 20px;
+    }
+    .result-item {
+      margin: 10px 0;
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+    .result-item a {
+      font-size: 18px;
+      text-decoration: none;
+      color: #007BFF;
+    }
+    .result-item a:hover {
+      text-decoration: underline;
+    }
+    .result-description {
+      font-size: 14px;
+      color: #555;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Search <i>www.madebydanny.uk</i></h1>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Type to search..." onkeyup="performSearch()">
+  </div>
+  <div id="searchResults">
+    <!-- All results will be displayed and filtered here -->
+  </div>
+
+  <!-- Include the external database file -->
+  <script src="/js/linksdatabse.js"></script>
+  <script>
+    // Function to create a result item element using the item's details
+    function createResultItem(item) {
+      const div = document.createElement("div");
+      div.className = "result-item";
+
+      const link = document.createElement("a");
+      link.href = item.link;
+      link.target = "_blank";
+      link.textContent = item.name;
+
+      const desc = document.createElement("div");
+      desc.className = "result-description";
+      desc.textContent = item.description;
+
+      div.appendChild(link);
+      div.appendChild(desc);
+
+      return div;
+    }
+
+    // Function to display all items from the database
+    function displayAllItems() {
+      const resultsContainer = document.getElementById("searchResults");
+      resultsContainer.innerHTML = "";
+      items.forEach(item => {
+        resultsContainer.appendChild(createResultItem(item));
+      });
+    }
+
+    // Function to filter and display items based on search input
+    function performSearch() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const resultsContainer = document.getElementById("searchResults");
+      resultsContainer.innerHTML = "";
+
+      const filteredResults = items.filter(item => item.name.toLowerCase().includes(input));
+      filteredResults.forEach(item => {
+        resultsContainer.appendChild(createResultItem(item));
+      });
+    }
+
+    // Initially display all items
+    displayAllItems();
+  </script>
+</body>
+</html>
