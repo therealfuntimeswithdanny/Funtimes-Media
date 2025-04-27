@@ -49,16 +49,7 @@ class PocketlistBlog extends HTMLElement {
       this.shadowRoot.querySelector('.flash-message').innerHTML =
         `Page saved at <a href="/saved.html">/saved.html</a>`;
     }
-  
-    updateCount() {
-      // Retrieve the current count of saved URLs for this blog from localStorage.
-      const storedData = localStorage.getItem('pocketList');
-      const pockets = storedData ? JSON.parse(storedData) : {};
-      const count = pockets[this.blogId] ? pockets[this.blogId].length : 0;
-  
-      // Update the displayed count (as a plain number).
-      this.shadowRoot.querySelector('.count').textContent = `${count}`;
-    }
+
   
     render() {
       // Render the component's HTML along with Font Awesome for the bookmark icon.
@@ -92,9 +83,9 @@ class PocketlistBlog extends HTMLElement {
           }
         </style>
         <div class="pocket-btn">
-          <i class="fa-solid fa-bookmark" style="color: #B197FC;"></i>
+           <i class="fa-solid fa-bookmark" style="color: #B197FC;"></i>
           <span class="count"></span>
-          <span> Bookmark</span>
+          <span>Bookmark</span>
         </div>
         <div class="flash-message"></div>
       `;

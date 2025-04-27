@@ -50,7 +50,6 @@
   </style>
 </head>
 <body>
-  <h1>Your Saved Pocket Links</h1>
   <div id="savedLinksContainer"></div>
 
   <script>
@@ -74,7 +73,7 @@
         blogSection.className = 'blog-section';
 
         // Add a header for the blog.
-        blogSection.innerHTML = `<h2>Blog ${blogId}</h2>`;
+        blogSection.innerHTML = `<h2>Saved Links</h2>`;
 
         if (links.length === 0) {
           blogSection.innerHTML += '<p class="no-links">No links saved for this blog.</p>';
