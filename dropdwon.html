@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fixed Dropup Menu</title>
+  <style>
+    /* Container fixed to the bottom left */
+    .dropdown {
+      position: fixed;
+      bottom: 5px;
+      left: 10px;
+      z-index: 1000;
+    }
+    
+    /* Black button with white text and rounded corners */
+    .dropdown button {
+      padding: 10px 15px;
+      font-size: 14px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    
+    /* Dropup menu styling: positioned above the button */
+    .dropdown-content {
+      display: none; /* Hidden by default */
+      position: absolute;
+      /* Place it above the button */
+      bottom: calc(100% + 5px); 
+      left: 0;
+      background-color: #fff;
+      border: 1px solid #000;
+      border-radius: 6px;
+      min-width: 150px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    
+    .dropdown-content a {
+      text-decoration: none;
+      color: #000;
+      padding: 8px 12px;
+      display: block;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .dropdown-content a:last-child {
+      border-bottom: none;
+    }
+    
+    /* Hover effect for menu items */
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+    
+    /* Show the dropup menu when hovering over the container */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="dropdown">
+    <button>Menu</button>
+    <div class="dropdown-content">
+      <a href="#">Option One</a>
+      <a href="#">Option Two</a>
+      <a href="#">Option Three</a>
+    </div>
+  </div>
+</body>
+</html>
