@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Microsoft Quiz with Auto Save & Footer</title>
+  <style>
+    /* Global Styles */
+    body {
+      background: #f2f2f2;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    /* Quiz Container: centered with floating effect */
+    #quiz-container {
+      background: #fff;
+      padding: 30px 20px 20px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 600px;
+      width: 90%;
+      position: relative;
+    }
+    /* Header with back arrow above the quiz title */
+    .quiz-header {
+      margin-bottom: 20px;
+    }
+    .back-arrow {
+      display: inline-block;
+      text-decoration: none;
+      color: #0078d7;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .quiz-header h1 {
+      text-align: center;
+      margin: 0;
+    }
+    /* Each question is shown one at a time */
+    .question {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Buttons are block-level elements */
+    button {
+      display: block;
+      width: 100%;
+      max-width: 200px;
+      margin: 20px auto;
+      padding: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      background: #0078d7;
+      color: #fff;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #005fa3;
+    }
+    /* Explanation text styling */
+    .explanation {
+      margin-top: 10px;
+      display: none;
+    }
+    /* Footer inside the quiz container */
+    .quiz-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div id="quiz-container">
+    <div class="quiz-header">
+      <!-- Back arrow above quiz title linking to the home page (adjust href as needed) -->
+      <a href="index.html" class="back-arrow">&#8592; Home</a>
+      <h1>Microsoft Quiz</h1>
+    </div>
+    
+    <!-- Question 1 -->
+    <div class="question" id="question1" style="display: block;">
+      <p><strong>1. Who founded Microsoft?</strong></p>
+      <label><input type="radio" name="q1" value="a"> Steve Jobs and Steve Wozniak</label><br>
+      <label><input type="radio" name="q1" value="b"> Bill Gates and Paul Allen</label><br>
+      <label><input type="radio" name="q1" value="c"> Larry Page and Sergey Brin</label><br>
+      <label><input type="radio" name="q1" value="d"> Mark Zuckerberg and Eduardo Saverin</label>
+      <p class="explanation">
+        Correct answer: Bill Gates and Paul Allen. Microsoft was founded in 1975 by these pioneers.
+      </p>
+      <button class="submit-btn" onclick="checkAnswer(1)">Submit Answer</button>
+      <button class="next-btn" onclick="nextQuestion(1)" style="display: none;">Next</button>
+    </div>
+    
+    <!-- Question 2 -->
+    <div class="question" id="question2">
+      <p><strong>2. What is the name of Microsoft’s operating system?</strong></p>
+      <label><input type="radio" name="q2" value="a"> macOS</label><br>
+      <label><input type="radio" name="q2" value="b"> Linux</label><br>
+      <label><input type="radio" name="q2" value="c"> Windows</label><br>
+      <label><input type="radio" name="q2" value="d"> Chrome OS</label>
+      <p class="explanation">
+        Correct answer: Windows. Microsoft Windows is the flagship operating system.
+      </p>
+      <button class="submit-btn" onclick="checkAnswer(2)">Submit Answer</button>
+      <button class="next-btn" onclick="nextQuestion(2)" style="display: none;">Next</button>
+    </div>
+    
+    <!-- Question 3 -->
+    <div class="question" id="question3">
+      <p><strong>3. What is Microsoft Office primarily used for?</strong></p>
+      <label><input type="radio" name="q3" value="a"> Gaming</label><br>
+      <label><input type="radio" name="q3" value="b"> Productivity tasks (word processing, spreadsheets)</label><br>
+      <label><input type="radio" name="q3" value="c"> Video editing</label><br>
+      <label><input type="radio" name="q3" value="d"> Graphic design</label>
+      <p class="explanation">
+        Correct answer: Productivity tasks. Office includes Word, Excel, and PowerPoint.
+      </p>
+      <button class="submit-btn" onclick="checkAnswer(3)">Submit Answer</button>
+      <button class="next-btn" onclick="nextQuestion(3)" style="display: none;">Next</button>
+    </div>
+    
+    <!-- Question 4 -->
+    <div class="question" id="question4">
+      <p><strong>4. What is the name of Microsoft’s cloud platform?</strong></p>
+      <label><input type="radio" name="q4" value="a"> AWS</label><br>
+      <label><input type="radio" name="q4" value="b"> Azure</label><br>
+      <label><input type="radio" name="q4" value="c"> Google Cloud</label><br>
+      <label><input type="radio" name="q4" value="d"> IBM Cloud</label>
+      <p class="explanation">
+        Correct answer: Azure. This is Microsoft’s primary cloud service.
+      </p>
+      <button class="submit-btn" onclick="checkAnswer(4)">Submit Answer</button>
+      <button class="next-btn" onclick="nextQuestion(4)" style="display: none;">Next</button>
+    </div>
+    
+    <!-- Question 5 -->
+    <div class="question" id="question5">
+      <p><strong>5. What was the first video game console released by Microsoft?</strong></p>
+      <label><input type="radio" name="q5" value="a"> PlayStation</label><br>
+      <label><input type="radio" name="q5" value="b"> Xbox</label><br>
+      <label><input type="radio" name="q5" value="c"> Nintendo Wii</label><br>
+      <label><input type="radio" name="q5" value="d"> Sega Dreamcast</label>
+      <p class="explanation">
+        Correct answer: Xbox. Released in 2001, it marked Microsoft’s entry into gaming.
+      </p>
+      <button class="submit-btn" onclick="checkAnswer(5)">Submit Answer</button>
+      <button class="next-btn" onclick="nextQuestion(5)" style="display: none;">Next</button>
+    </div>
+    
+    <!-- Final Message -->
+    <div id="final-message" style="text-align: center; display: none;">
+      <h2>Quiz Completed!</h2>
+      <p id="score-message"></p>
+      <button onclick="restartQuiz()">Restart Quiz</button>
+    </div>
+    
+    <!-- Footer: Last saved info on left; Copyright on right -->
+    <div class="quiz-footer">
+      <span id="last-saved">Last saved at: Not saved yet</span>
+      <span>&copy; 2024-2028 Made by Danny UK <i>A Fntimes Media Comapny</i></span>
+    </div>
+  </div>
+  
+  <script>
+    // Total number of questions
+    const totalQuestions = 5;
+    let currentScore = 0;
+    
+    // Mapping of correct answers for the quiz
+    const correctAnswers = {
+      q1: "b",
+      q2: "c",
+      q3: "b",
+      q4: "b",
+      q5: "b"
+    };
+    
+    // Cookie helper functions (for saving progress)
+    function setCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+    function getCookie(name) {
+      const nameEQ = name + "=";
+      const ca = document.cookie.split(";");
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i].trim();
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length);
+      }
+      return null;
+    }
+    function eraseCookie(name) {
+      document.cookie = name + "=; Max-Age=-99999999; path=/";
+    }
+    
+    // Global progress object
+    let progress = {
+      currentQuestion: 1,
+      answers: {},
+      lastSaved: "Not saved yet"
+    };
+    
+    // Update the "Last saved" indicator in the footer
+    function updateLastSaved() {
+      document.getElementById("last-saved").textContent =
+        "Last saved at: " + progress.lastSaved;
+    }
+    
+    // Auto-save function: called on every radio button change
+    function autoSave(qNumber, selectedValue) {
+      progress.answers["q" + qNumber] = selectedValue;
+      progress.lastSaved = new Date().toLocaleTimeString();
+      updateLastSaved();
+      // Save progress to cookie (expires in 1 day)
+      setCookie("quizProgress", JSON.stringify(progress), 1);
+    }
+    
+    // Attach auto-save listeners to all radio inputs
+    function attachAutoSaveListeners() {
+      const radios = document.querySelectorAll("input[type='radio']");
+      radios.forEach(radio => {
+        radio.addEventListener("change", function(event) {
+          const questionDiv = event.target.closest(".question");
+          if (questionDiv) {
+            const qNumber = parseInt(questionDiv.id.replace("question", ""));
+            autoSave(qNumber, event.target.value);
+          }
+        });
+      });
+    }
+    
+    // Check the answer when "Submit Answer" is clicked
+    function checkAnswer(qNumber) {
+      const radioName = "q" + qNumber;
+      const selected = document.querySelector('input[name="' + radioName + '"]:checked');
+      if (!selected) {
+        alert("Please select an answer.");
+        return;
+      }
+      const answer = selected.value;
+      const questionDiv = document.getElementById("question" + qNumber);
+      const explanationEl = questionDiv.querySelector(".explanation");
+      if (answer === correctAnswers[radioName]) {
+        explanationEl.style.color = "green";
+        if (!questionDiv.getAttribute("data-submitted")) {
+          currentScore++;
+        }
+      } else {
+        explanationEl.style.color = "red";
+      }
+      explanationEl.style.display = "block";
+      // Disable radio buttons to prevent changes
+      Array.from(document.getElementsByName(radioName)).forEach(radio => radio.disabled = true);
+      questionDiv.setAttribute("data-submitted", "true");
+      questionDiv.querySelector(".submit-btn").style.display = "none";
+      questionDiv.querySelector(".next-btn").style.display = "block";
+      
+      // Update progress: advance to next question and save
+      progress.currentQuestion = qNumber + 1;
+      progress.lastSaved = new Date().toLocaleTimeString();
+      updateLastSaved();
+      setCookie("quizProgress", JSON.stringify(progress), 1);
+    }
+    
+    // Show the next question or display the final score if finished
+    function nextQuestion(qNumber) {
+      document.getElementById("question" + qNumber).style.display = "none";
+      const nextQ = qNumber + 1;
+      if (nextQ <= totalQuestions) {
+        document.getElementById("question" + nextQ).style.display = "block";
+      } else {
+        document.getElementById("final-message").style.display = "block";
+        document.getElementById("score-message").textContent =
+          "Your final score is " + currentScore + " out of " + totalQuestions;
+        eraseCookie("quizProgress");
+      }
+    }
+    
+    // Restart the quiz (clears progress and reloads the page)
+    function restartQuiz() {
+      eraseCookie("quizProgress");
+      window.location.reload();
+    }
+    
+    // On page load: attach auto-save listeners and restore saved progress if available
+    window.onload = function () {
+      attachAutoSaveListeners();
+      const savedProgress = getCookie("quizProgress");
+      if (savedProgress) {
+        progress = JSON.parse(savedProgress);
+        updateLastSaved();
+        document.querySelectorAll(".question").forEach(div => div.style.display = "none");
+        if (progress.currentQuestion <= totalQuestions) {
+          const currentDiv = document.getElementById("question" + progress.currentQuestion);
+          currentDiv.style.display = "block";
+          const radios = currentDiv.querySelectorAll("input[type='radio']");
+          radios.forEach(radio => {
+            if (progress.answers["q" + progress.currentQuestion] === radio.value) {
+              radio.checked = true;
+            }
+          });
+        } else {
+          document.getElementById("final-message").style.display = "block";
+          document.getElementById("score-message").textContent =
+            "Your final score is " + currentScore + " out of " + totalQuestions;
+        }
+      }
+    }
+  </script>
+</body>
+</html>
