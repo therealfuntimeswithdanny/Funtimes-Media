@@ -84,4 +84,7 @@ a {
     background-color: black;
     color: white;
   }
-  
+.views-blog {
+  display: inline-flex;
+
+}
