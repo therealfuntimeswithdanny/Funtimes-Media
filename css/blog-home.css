@@ -192,6 +192,9 @@
     background-color: black;
 
   }
+  pages {
+    text-align: center;
+  }
    /* Button base styling */
    #darkbtn {
     display: inline-block;
@@ -227,3 +230,4 @@
   body.light-mode #darkbtn:hover {
     background-color: #FFC107;
   }
+
