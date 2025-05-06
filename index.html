@@ -1,80 +1,402 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home - Danny Morrisey | Made by Danny UK</title>
-     <link type="image/x-icon" rel="shortcut icon" href="https://cdn.madebydanny.uk/mbd.png"/>
-    <meta name="title" content="Home - Danny Morrisey | Made by Danny UK" />
-<meta name="description" content="My name is Danny, I know how to code HTML, CSS and Some Javascript! I work at Funtimes Media and I can build PCs."/>
-<meta name="keywords" content="MBD, mbd, MBDUK, Made by Danny, Made by Danny UK" />
-<meta name="author" content="Danny Morrisey" />
-<link rel="stylesheet" href="blog-styles/mango.css">
-<meta name="algolia-site-verification"  content="1533AC12F1B6B61D" />
-<script src="/js/back-to-top-btn.js"></script>
-<script src="/js/dev-popup.js"></script>
-<!-- Open Graph (OG) for Social Sharing -->
-<meta property="og:title" content="Home - Danny Morrisey | Made by Danny UK" />
-<meta property="og:description" content="My name is Danny, I know how to code HTML, CSS and Some Javascript! I work at Funtimes Media and I can build PCs."/>
-<meta property="og:image" content="https://cdn.bsky.app/img/banner/plain/did:plc:tnnl6qjjj4lquabzmsuu34ip/bafkreifuamgr2sond5i4f52x2y4jau3owhomzm325zl6i5fya4heq3kkzy@jpeg" />
-<meta property="og:url" content="https://madebydanny.uk/blog" />
-<meta property="og:type" content="website"/>
-<script src="https://kit.fontawesome.com/0ca27f8db1.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/0ca27f8db1.js" crossorigin="anonymous"></script>
+     <!-- Title & Meta Description -->
+  <title>Daniel Morrisey - Made by Danny UK | A Funtimes Media Company</title>
+  <meta name="description" content="I'm Danny, a Front End Web Developer for Funtimes Media. I also built my own computer—making apps and websites for Funtimes Media!">
+  <meta name="keywords" content="Danny Morrisey, Daniel Morrisey, madebydanny.uk, Made by Danny, Danny's Blog, MBD, Funtimes Media, Funtimeswithdanny, Daniel Morrisey, Made by Danny UK">
+  <link rel="canonical" href="madebydanny.uk">
+    <link rel="shortcut icon" href="https://cdn.funtimesmedia.uk/mbd.png" type="image/x-icon">
+  <!-- Open Graph / Facebook Meta Tags -->
+  <meta property="og:title" content="Daniel Morrisey - Made by Danny UK | A Funtimes Media Company">
+  <meta property="og:description" content="I'm Danny, a Front End Web Developer for Funtimes Media. I also built my own computer—making apps and websites for Funtimes Media!.">
+  <meta property="og:url" content="https://madebydanny.uk">
+  <meta property="og:type" content="website">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Normal Light Mode Styles */
+    body {
+      font-family: Arial;
+      padding: 20px;
+      background: #f1f1f1;
+      color: black;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* Header/Blog Title */
+    .header {
+      padding: 30px;
+      font-size: 40px;
+      text-align: center;
+      background: white;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* Create two unequal columns that floats next to each other */
+    /* Left column */
+    .leftcolumn {   
+      float: left;
+      width: 75%;
+    }
+
+    /* Right column */
+    .rightcolumn {
+      float: left;
+      width: 25%;
+      padding-left: 20px;
+    }
+
+    /* Fake image */
+    .fakeimg {
+      background-color: #aaa;
+      width: 100%;
+      padding: 20px;
+    }
+
+    /* Add a card effect for articles */
+    .card {
+      background-color: white;
+      padding: 20px;
+      margin-top: 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background: #ddd;
+      margin-top: 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .topnav {
+      overflow: hidden;
+      background-color: white;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .topnav a {
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .topnav a.active {
+      background-color: #f1f1f1;
+      color: black;
+    }
+
+    a {
+      color: black;
+      text-decoration: none;
+    }
+
+    img {
+      width: 75%;
+    }
+
+    /* Dark Mode Specific Styles */
+    .dark-mode {
+      background: #333;
+      color: #f1f1f1;
+    }
+
+    .dark-mode .header,
+    .dark-mode .card,
+    .dark-mode .topnav,
+    .dark-mode .footer {
+      background: #444;
+      color: #f1f1f1;
+    }
+
+    .dark-mode a {
+      color: #f1f1f1;
+    }
+
+    .dark-mode .topnav a.active {
+      background-color: #555;
+      color: #f1f1f1;
+    }
+
+    /* Styles for Back to Top Button (now on top) */
+    #myBtn {
+      display: none; /* Hidden by default */
+      position: fixed; /* Fixed/sticky position */
+      bottom: 80px; /* Positioned higher on the page */
+      right: 30px;
+      z-index: 99; /* Make sure it does not overlap */
+      border: none; /* Remove borders */
+      outline: none; /* Remove outline */
+      background-color: #f1f1f1; /* Set a background color */
+      color: black; /* Text color */
+      cursor: pointer; /* Add a mouse pointer on hover */
+      padding: 15px; /* Some padding */
+      border-radius: 10px; /* Rounded corners */
+      font-size: 18px; /* Increase font size */
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    #myBtn:hover {
+      background-color: black;
+      color: white;
+    }
+
+    /* Styles for Dark Mode Toggle Button (now on bottom) */
+    #darkModeBtn {
+      position: fixed;
+      bottom: 20px; /* Positioned at the very bottom */
+      right: 30px;
+      z-index: 99;
+      border: none;
+      outline: none;
+      background-color: #f1f1f1;
+      color: black;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 18px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    #darkModeBtn:hover {
+      background-color: black;
+      color: white;
+    }
+
+    /* Responsive layout - stacking on small screens */
+    @media screen and (max-width: 800px) {
+      .leftcolumn, .rightcolumn {   
+        width: 100%;
+        padding: 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar">
-  <div class="logo">Home - Made by Danny UK</div>
-  <div class="nav-links">
-    <a href="/blog/index.html">Blog</a>
-    <a href="/photos.html"> Photos</a>
-    <a href="/apps/index.html"><i>Apps (Coming Soon)</i></a>
-    <a href="/search.html"><i class="fa-solid fa-magnifying-glass"></i></a>
-      <icons>
-        <a>|</a>
-          <a href="https://bsky.app/profile/madebydanny.uk" target="_blank"><i class="fa-brands fa-bluesky"></i></a>
-      <a href="https://twitch.tv/funtimeswithdanny" target="_blank"><i class="fa-brands fa-twitch"></i></a>
-      <a href="https://youtube.com/@MadebyDanny" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-      <a href="https://github.com/therealfuntimeswithdanny" target="_blank"><i class="fa-brands fa-github"></i></a>
-      <a href="mailto:dannymorrisey@madebydanny.uk" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-      <a href="https://danielmorrisey.start.page" target="_blank"><i class="fa-brands fa-buffer"></i></a>
-      <a href="https://madebydanny.uk/rss" target="_blank"><i class="fa-solid fa-rss"></i></a>
-      <a href="https://discord.com/users/therealfuntimeswithdanny" target="_blank"><i class="fa-brands fa-discord"></i></a>
-      <a href="https://www.dropbox.com/referrals/AAAYO3ZZ7xlUAT6T79Bdn1A5dsyrCWUPOBs?src=global9" target="_blank"><i class="fa-brands fa-dropbox"></i></a>
-      <a href="https://reddit.com/u/funtimeswithdanny" target="_blank"><i class="fa-brands fa-reddit"></i></a>
-      <a href="#" target="_blank"><i class="fa-brands fa-steam"></i></a>
-      <a href="mailto:dannymorrisey@madebydanny.uk" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-      <a href="https://instagram.com/futimeswithdanny" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-      </icons>
-  </div>
-</nav>
 
-  <div class="bio">
-    <img src="https://cdn.funtimesmedia.uk/mbd.png" alt="Profile Picture" />
-    <h1>Danny Morrisey <i class="fa-solid fa-circle-check" style="color: #1184fe;"></i></h1>
-      <p><i class="fa-solid fa-circle-check" style="color: #1184fe;"></i> <i>This user is a human, they work/support Funtimes Media and are not a Bot</i></p>
-       <div class="social-links">
-      <a href="https://bsky.app/profile/madebydanny.uk" target="_blank"><i class="fa-brands fa-bluesky"></i></a>
-      <a href="https://twitch.tv/funtimeswithdanny" target="_blank"><i class="fa-brands fa-twitch"></i></a>
-      <a href="https://youtube.com/@MadebyDanny" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-      <a href="https://github.com/therealfuntimeswithdanny" target="_blank"><i class="fa-brands fa-github"></i></a>
-      <a href="mailto:dannymorrisey@madebydanny.uk" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-      <a href="https://danielmorrisey.start.page" target="_blank"><i class="fa-brands fa-buffer"></i></a>
-      <a href="https://madebydanny.uk/rss" target="_blank"><i class="fa-solid fa-rss"></i></a>
-      <a href="https://discord.com/users/therealfuntimeswithdanny" target="_blank"><i class="fa-brands fa-discord"></i></a>
-      <a href="https://www.dropbox.com/referrals/AAAYO3ZZ7xlUAT6T79Bdn1A5dsyrCWUPOBs?src=global9" target="_blank"><i class="fa-brands fa-dropbox"></i></a>
-      <a href="https://reddit.com/u/funtimeswithdanny" target="_blank"><i class="fa-brands fa-reddit"></i></a>
-      <a href="#" target="_blank"><i class="fa-brands fa-steam"></i></a>
-      <a href="https://instagram.com/futimeswithdanny" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-    </div>
-    <p>
-        <b>Front End Web Developer | Funtimes Media Staff | He/Him</b>
-        <br>
-     I'm Danny an Front End Web Developer for Funtimes Media, I also built my own computer. Making apps and websites for Funtimes Media! If you want to email me, do so at <a href="mailto:dannymorrisey@madebydanny.uk">dannymorrisey@madebydanny.uk</a>
-    </p>      Copyright 2024-2028 Made by Danny UK | A Funtimes Media Comapny | Secured by Cloudflare<br>
-        <i>Made With Help From Linus Tech Tips, Microsoft Copilot, W3Schools and Cloudflare.</i>
-    </p>
+  <div class="header">
+    <h2>Made by Danny</h2>
   </div>
-    <my-popup></my-popup>
-    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up fa-bounce"></i></button>
+
+  <div class="topnav">
+    <a class="active" href="index.html">Home</a>
+    <a href="#news">About</a>
+    <a href="photos.html">Photos</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div class="row">
+    <div class="leftcolumn">
+      <div class="card">
+        <h2>Microsoft is revamping the Windows 11 Start menu</h2>
+        <h5>Published on May 8th, 2025 | #Windows11 #Microsoft</h5>
+        <img src="https://cdn.funtimesmedia.uk/blogs/bafkreiea62uuadl274v2rwytrjuo3kcxanxrg3l2mzqa7b2l2vtwvaxntm.jpg">
+        <p><a href="/blog/2025/may/08.html">Read More...</a></p>
+        <p>Microsoft is actively working on rolling out significant enhancements to the Windows 11 Start menu.</p>
+      </div>
+      <div class="card">
+        <h2>Google just revealed its next big Android redesign</h2>
+        <h5>Published on May 7th, 2025 | #Google #Android</h5>
+        <img src="https://cdn.funtimesmedia.uk/blogs/AA1EdwZi.png">
+        <p><a href="/blog/2025/may/07.html">Read More...</a></p>
+        <p>Found in a deleted 9to5Google post, Google accidentally revealed the next Android redesign.</p>
+      </div>
+      <div class="card">
+        <h2>The Best time to Post on YouTube</h2>
+        <h5>Published on May 6th, 2025 | #SocialMedia #Youtube</h5>
+        <img src="https://cdn.funtimesmedia.uk/blogs/best-time-to-post-on-youtube-main.png">
+        <p><a href="/blog/2025/may/06.html">Read More...</a></p>
+        <p>I'm gonna share with you the best times to post your videos to maximize views, all thanks to some awesome tips from Buffer.</p>
+      </div>
+      <div class="card">
+        <h2>My New Best Friend</h2>
+        <h5>Published on May 3rd, 2025 | #Pi #Raspberry Pi</h5>
+        <img src="https://cdn.funtimesmedia.uk/blogs/538545649b8f9e6a8b077d3f52e5e06e.original.jpg">
+        <p><a href="/blog/2025/may/03.html">Read More...</a></p>
+        <p>For the past couple of weeks, I've been using my Raspberry Pi 4 as my main computer. It's been a fun little experiment.</p>
+      </div>
+      <div class="card">
+        <h2>New Windows start Menu</h2>
+        <h5>Published on May 2nd, 2025 | #Microsoft #Windows</h5>
+        <img src="https://cdn.funtimesmedia.uk/blogs/514e84769d833342722a49128591b1d9.original.jpg">
+        <p><a href="/blog/2025/may/02.html">Read More...</a></p>
+        <p>Recently, phantomofearth (phantomofearth.bsky.social) discovered that a Windows 11 preview build reveals Microsoft's work on a redesigned Start Menu, expected to be a major improvement.</p>
+      </div>
+      <div class="card">
+        <h2>Is Microsoft 365 Worth it?</h2>
+        <h5>Published on May 1st, 2025 | #Microsoft #Windows</h5>
+        <img src="https://cdn.funtimesmedia.uk/blogs/4-30-25-is-office-worth-it.jpg">
+        <p><a href="/blog/2025/may/01.html">Read More...</a></p>
+        <p>I personally pay $9.99 each month for my Office subscription, and I find it to be a fantastic price for the features and perks it provides.</p>
+      </div>
+    </div>
+    <div class="rightcolumn">
+      <div class="card">
+        <h2>About Me</h2>
+        <p><b>Front End Web Developer | Funtimes Media Staff | He/Him</b></p>
+        <p>I'm Danny, a Front End Web Developer for Funtimes Media. I also built my own computer—making apps and websites for Funtimes Media!</p>
+      </div>
+      <div class="card">
+        <h3>Archives</h3>
+        <p><a href="/blog/2025/april/index.html">April</a></p>
+      </div>
+      <div class="card">
+        <h3>Follow Me</h3>
+        <p><a href="https://danielmorrisey.start.page"><i class="fa-brands fa-buffer"></i> - Buffer</a></p>
+        <p><a><i class="fa-brands fa-bluesky"></i> - Bluesky</a></p>
+        <p><a><i class="fa-brands fa-twitch"></i> - Twitch</a></p>
+        <p><a><i class="fa-brands fa-youtube"></i></a> - YouTube</p>
+        <p><a><i class="fa-brands fa-reddit"></i> - Reddit</a></p>
+        <p><a><i class="fa-brands fa-github"></i> - GitHub</a></p>
+        <p><a><i class="fa-brands fa-discord"></i> - Discord</a></p>
+        <p><a><i class="fa-brands fa-steam"></i> - Steam</a></p>
+        <p><a><i class="fa-solid fa-envelope"></i> - Email</a></p>
+      </div>
+      <div class="card">
+        <h3>Newsletter</h3>
+        <iframe data-tally-src="https://tally.so/embed/3X9NPe?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="248" frameborder="0" marginheight="0" marginwidth="0" title="Newsletter Sign Up"></iframe>
+        </div>
+                <div class="card">
+            <h3>Site Discussion</h3>
+            <script src="https://giscus.app/client.js"
+        data-repo="therealfuntimeswithdanny/Funtimes-Media"
+        data-repo-id="R_kgDONuLe0A"
+        data-category="Announcements"
+        data-category-id="DIC_kwDONuLe0M4CmQQ1"
+        data-mapping="og:title"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+        </div>
+        <div class="card">
+           <h3>Latest Bluesky Post</h3>
+        </div>
+      </div>
+    </div>
+
+  <div class="footer">
+    <h2>&copy; 2024-28 Made by Danny UK <i>A Funtimes Media Company</i></h2>
+    <h4>Performance & Security by <a href="https://www.cloudflare.com/application-services/solutions/">Cloudflare</a>
+      | <a href="https://github.com/therealfuntimeswithdanny/Funtimes-Media">View Site Files on GitHub</a>
+      | <a href="/index.html">Check for Update | <i id="commit-date">Fetching last commit...</i></a>
+    </h4>  
+  </div>
+
+  <!-- Back to Top Button (now on top) -->
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up fa-bounce"></i></button>
+
+  <!-- Dark Mode Toggle Button (now on bottom) -->
+  <button onclick="toggleDarkMode()" id="darkModeBtn" title="Toggle dark mode"><i class="fa-solid fa-circle-half-stroke"></i></button>
+
+  <script>
+    // Get the "Back to Top" button element
+    let mybutton = document.getElementById("myBtn");
+
+    // Show or hide the "Back to Top" button when scrolling
+    window.onscroll = function() { scrollFunction(); };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // Scroll to the top of the document when the "Top" button is clicked
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+
+    // Toggle Dark Mode by adding/removing the "dark-mode" class on the body element
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+    
+    <script>
+        async function getLastCommitDate(owner, repo) {
+            const url = `https://api.github.com/repos/${owner}/${repo}/commits`;
+            
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`Error: ${response.status} ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                const rawDate = new Date(data[0].commit.committer.date);
+
+                // Format as M-DD-YY HH-MM
+                const month = rawDate.getMonth() + 1; // Months are 0-indexed
+                const day = rawDate.getDate();
+                const year = rawDate.getFullYear().toString().slice(-2);
+                const hours = rawDate.getHours();
+                const minutes = rawDate.getMinutes();
+                const formattedDate = `${month}/${day}/${year} ${hours}:${minutes} EST`;
+
+                document.getElementById("commit-date").innerText = `Last Commit Date: ${formattedDate}`;
+            } catch (error) {
+                console.error(error);
+                document.getElementById("commit-date").innerText = "Failed to retrieve commit date.";
+            }
+        }
+
+        window.onload = function() {
+            const owner = "therealfuntimeswithdanny"; 
+            const repo = "Funtimes-Media"; 
+            getLastCommitDate(owner, repo);
+        };
+    </script>
+        <script>
+          var d = document, w = "https://tally.so/widgets/embed.js", v = function() {
+            if (typeof Tally !== "undefined") {
+              Tally.loadEmbeds();
+            } else {
+              d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e) {
+                e.src = e.dataset.tallySrc;
+              });
+            }
+          };
+          if (typeof Tally !== "undefined") {
+            v();
+          } else if (d.querySelector('script[src="' + w + '"]') == null) {
+            var s = d.createElement("script");
+            s.src = w;
+            s.onload = v;
+            s.onerror = v;
+            d.body.appendChild(s);
+          }
+        </script>
 </body>
 </html>
